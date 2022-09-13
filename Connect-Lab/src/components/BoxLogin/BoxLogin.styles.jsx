@@ -4,7 +4,7 @@ export const BoxLoginStyled = styled.div`
     background: #FFFFFF;
     box-shadow: 4px 4px 15px 1px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    margin-top: 230px;
+    margin-top: 15.4%;
     justify-content: center;
     width: 28%;
     margin-left: 35%;
@@ -50,7 +50,7 @@ export const BtnLogin = styled.button`
     font-weight: 600;
     font-size: 16px;
     width: 68%;
-    height: 38px;
+    height: 40px;
     border: none;
     margin-left: 16%;
     margin-top: 2%;
