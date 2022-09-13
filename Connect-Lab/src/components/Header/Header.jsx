@@ -1,13 +1,13 @@
-import './Header.css'
-
+import './Header.styles.jsx'
+import { BtnLogin, DivLogoStyled, HeaderStyled, ImgStyled, PLogoStyled } from './Header.styles.jsx'
 export const Header = () => {
     return(
-        <header className="header">
-            <div id='divLogo'>
-                <img id="logo1" src="../src/assets/imgs/ConnectLab - Logo.png" alt="Logo do Connect Lab" />
-                <p id="pLogo">Connect Lab</p>
-            </div>
-            <button id="btnLogin">Login</button>
-        </header>
+        <HeaderStyled>
+            <DivLogoStyled>
+                <ImgStyled src='../src/assets/imgs/ConnectLab - Logo.png' alt='Logo do Connect Lab'/>
+                <PLogoStyled>Connect Lab</PLogoStyled>
+            </DivLogoStyled>
+            <BtnLogin>Login</BtnLogin>
+        </HeaderStyled>
     )
 }

@@ -1,38 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+import styled from "styled-components";
 
-.header{
+export const HeaderStyled = styled.header`
     background-color: #22577A;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
-}
+`
 
-#divLogo{
+export const DivLogoStyled = styled.div`
     display: flex;
     margin: 0.3%;
-}
+`
 
-#logo1{
+export const ImgStyled = styled.img`
     width: 5%;
     margin: 1.2%;
     margin-left: 2%;
-}
+`
 
-#pLogo{
+export const PLogoStyled = styled.p`
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     color: white;
     font-size: 19px;
     margin-top: 2.8%;
-}
+`
 
-#btnLogin{
+export const BtnLogin = styled.button`
     background-color: #38A3A5;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    width: 8%;
+    width: 9%;
     height: 100%;
     padding: 10px;
     margin: 2%;
@@ -43,4 +43,4 @@
     color: white;
     font-size: 18px;
     cursor: pointer;
-}
+`
