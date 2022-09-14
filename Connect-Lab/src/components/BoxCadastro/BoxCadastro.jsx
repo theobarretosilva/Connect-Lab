@@ -51,7 +51,7 @@ const checkCEP = (e) => {
                 <DivBaseStyled>
                     <DivCamposStyled>
                         <PESStyled>Senha*</PESStyled>
-                        <InputCadastroStyled name="Senha" type={'password'} {...register('Senha')} placeholder="Sua senha" ref={ register("Senha", { required: "Preencha este campo!"}) }/>
+                        <InputCadastroStyled name="Senha" type={'password'} {...register('Senha')} placeholder="Sua senha" ref={ register("Senha", { min:8, max:12, required: "A senha deve ter entre 8 e 12 caracteres!"}) }/>
                     </DivCamposStyled>
                     <DivCamposStyled>
                         <PESStyled>Confirmação de senha*</PESStyled>
@@ -61,41 +61,41 @@ const checkCEP = (e) => {
                 <DivBaseStyled>
                     <DivCamposStyled>
                         <PESStyled>Telefone</PESStyled>
-                        <InputCadastroStyled name="Telefone" type={'text'} placeholder="Seu telefone" />
+                        <InputCadastroStyled name="Telefone" type={'text'} placeholder="Seu telefone" ref={ register("Telefone", { required: false})}/>
                     </DivCamposStyled>
                     <DivCamposStyled>
                         <PESStyled>CEP*</PESStyled>
-                        <InputCadastroStyled name="CEP" type={'text'} placeholder="Seu CEP" onBlur={checkCEP} required/>
+                        <InputCadastroStyled name="CEP" type={'text'} placeholder="Seu CEP" onBlur={checkCEP} ref={ register("CEP", { required: "Preencha este campo!"})}/>
                     </DivCamposStyled>
                 </DivBaseStyled>
                 <DivBaseStyled>
                     <DivCamposStyled>
                         <PESStyled>Estado*</PESStyled>
-                        <InputCadastroStyled name="Estado" type={'text'} {...register('state')} placeholder="Seu logradouro/endereço" required/>
+                        <InputCadastroStyled name="Estado" type={'text'} {...register('state')} placeholder="Seu logradouro/endereço" ref={ register("Estado", { required: "Preencha este campo!"})}/>
                     </DivCamposStyled>
                     <DivCamposStyled>
                         <PESStyled>Cidade*</PESStyled>
-                        <InputCadastroStyled name="Cidade" type={'text'} {...register('city')} placeholder="Sua cidade" required/>
+                        <InputCadastroStyled name="Cidade" type={'text'} {...register('city')} placeholder="Sua cidade" ref={ register("Cidade", { required: "Preencha este campo!"})}/>
                     </DivCamposStyled>
                 </DivBaseStyled>
                 <DivBaseStyled>
                     <DivCamposStyled>
                         <PESStyled>Bairro*</PESStyled>
-                        <InputCadastroStyled name="Bairro" type={'text'} {...register('neighborhood')} placeholder="Seu bairro" required/>
+                        <InputCadastroStyled name="Bairro" type={'text'} {...register('neighborhood')} placeholder="Seu bairro" ref={ register("Bairro", { required: "Preencha este campo!"})}/>
                     </DivCamposStyled>
                     <DivCamposStyled>
                         <PESStyled>Logradouro/Endereço*</PESStyled>
-                        <InputCadastroStyled name="Endereco" type={'text'} {...register('address')} placeholder="Seu logradouro/endereço" required/>
+                        <InputCadastroStyled name="Endereco" type={'text'} {...register('address')} placeholder="Seu logradouro/endereço" ref={ register("Endereco", { required: "Preencha este campo!"})}/>
                     </DivCamposStyled>
                 </DivBaseStyled>
                 <DivBaseStyled>
                     <DivCamposStyled>
                         <PESStyled>Número*</PESStyled>
-                        <InputCadastroStyled name="NumeroEndereco" type={'number'} {...register('addressNumber')} placeholder="O número do seu endereço" required/>
+                        <InputCadastroStyled name="NumeroEndereco" type={'number'} {...register('addressNumber')} placeholder="O número do seu endereço" ref={ register("NumeroEndereco", { required: "Preencha este campo!"})}/>
                     </DivCamposStyled>
                     <DivCamposStyled>
                         <PESStyled>Complemento</PESStyled>
-                        <InputCadastroStyled name="ComplementoEndereco" type={'text'} placeholder="Complemento do endereço" />
+                        <InputCadastroStyled name="ComplementoEndereco" type={'text'} placeholder="Complemento do endereço" ref={ register("ComplementoEndereco", { required: false})}/>
                     </DivCamposStyled>
                 </DivBaseStyled>
                 <BtnCadastrese>Cadastre-se</BtnCadastrese>
