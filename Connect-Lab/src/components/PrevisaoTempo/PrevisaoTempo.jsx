@@ -8,20 +8,28 @@ export const PrevisaoTempo = () => {
         base: 'https://api.openweathermap.org/data/2.5/'
     };
 
-    // eslint-disable-next-line no-unused-vars
     const [search, setSearch] = useState("");
+    
+    const searchPressed = () => {
+        fetch(`${apiWeather.base}weather?q=${search}&units=metric&APPID=${apiWeather.key}`)
+    }
 
     return(
-        <SectionTempoStyled>
-            <PTempStyled>16 °C</PTempStyled>
-            <PLocalStyled>São José, SC</PLocalStyled>
-            <InfoTempoStyled>
-                <PSenPreChaStyled>Sensação térmica: 15°C</PSenPreChaStyled>
-                <p><b>-</b></p>
-                <PSenPreChaStyled>Precipitação: 0mm</PSenPreChaStyled>
-                <p><b>-</b></p>
-                <PSenPreChaStyled>Chance de chuva: 0%</PSenPreChaStyled>
-            </InfoTempoStyled>
-        </SectionTempoStyled>
+        <>
+            <input type="text" onChange={(e) => setSearch(e.target.value)}/>
+            <button onClick={searchPressed}>pesquisar</button>
+            <SectionTempoStyled>
+                <PTempStyled>16 °C</PTempStyled>
+                <PLocalStyled>São José, SC</PLocalStyled>
+                <InfoTempoStyled>
+                    <PSenPreChaStyled>Sensação térmica: 15°C</PSenPreChaStyled>
+                    <p><b>-</b></p>
+                    <PSenPreChaStyled>Precipitação: 0mm</PSenPreChaStyled>
+                    <p><b>-</b></p>
+                    <PSenPreChaStyled>Chance de chuva: 0%</PSenPreChaStyled>
+                </InfoTempoStyled>
+            </SectionTempoStyled>
+        </>
+        
     )
 }
