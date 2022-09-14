@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SectionTempoStyled, InfoTempoStyled } from './PrevisaoTempo.styles'
+import { SectionTempoStyled, InfoTempoStyled, PTempStyled, PLocalStyled, PSenPreChaStyled } from './PrevisaoTempo.styles'
 
 export const PrevisaoTempo = () => {
     // eslint-disable-next-line no-unused-vars
@@ -13,14 +13,14 @@ export const PrevisaoTempo = () => {
 
     return(
         <SectionTempoStyled>
-            <p>16 °C</p>
-            <p>São José, SC</p>
+            <PTempStyled>16 °C</PTempStyled>
+            <PLocalStyled>São José, SC</PLocalStyled>
             <InfoTempoStyled>
-                <p>Sensação térmica: 15°C</p>
-                <p><b>---</b></p>
-                <p>Precipitação: 0mm</p>
-                <p><b>---</b></p>
-                <p>Chance de chuva: 0%</p>
+                <PSenPreChaStyled>Sensação térmica: 15°C</PSenPreChaStyled>
+                <p><b>-</b></p>
+                <PSenPreChaStyled>Precipitação: 0mm</PSenPreChaStyled>
+                <p><b>-</b></p>
+                <PSenPreChaStyled>Chance de chuva: 0%</PSenPreChaStyled>
             </InfoTempoStyled>
         </SectionTempoStyled>
     )
