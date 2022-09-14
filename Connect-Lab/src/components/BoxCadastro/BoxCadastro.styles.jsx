@@ -4,7 +4,7 @@ export const BoxCadastroStyled = styled.section`
     background: #FFFFFF;
     box-shadow: 4px 4px 15px 1px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    margin-top: 150px;
+    margin-top: 40px;
     width: 60%;
     margin-left: 19.4%;
 `
@@ -34,6 +34,11 @@ export const InputCadastroStyled = styled.input`
     height: 38px;
     margin-bottom: 12px;
     padding-left: 7px;
+    font-family: 'Inter', sans-serif;
+
+    ::-webkit-calendar-picker-indicator{
+        padding-right: 10px;
+    }
 `
 
 export const BtnCadastrese = styled.button`

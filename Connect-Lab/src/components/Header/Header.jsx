@@ -1,5 +1,5 @@
-import './Header.styles.jsx'
 import { BtnLogin, DivLogoStyled, HeaderStyled, ImgStyled, PLogoStyled } from './Header.styles.jsx'
+
 export const Header = () => {
     return(
         <HeaderStyled>
