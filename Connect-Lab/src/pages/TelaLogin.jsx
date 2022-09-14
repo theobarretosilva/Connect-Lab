@@ -9,3 +9,5 @@ export const TelaLogin = () => {
         </>
     )
 }
+
+export default TelaLogin;
