@@ -14,7 +14,7 @@ export const DivLogoStyled = styled.div`
 `
 
 export const ImgStyled = styled.img`
-    width: 5%;
+    width: 4%;
     margin: 1.2%;
     margin-left: 2%;
 `
@@ -24,7 +24,7 @@ export const PLogoStyled = styled.p`
     font-weight: 600;
     color: white;
     font-size: 19px;
-    margin-top: 2.8%;
+    margin-top: 2.3%;
 `
 
 export const BtnLogin = styled.button`

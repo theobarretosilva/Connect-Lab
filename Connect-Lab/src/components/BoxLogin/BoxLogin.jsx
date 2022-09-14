@@ -1,14 +1,23 @@
 import { AcessarStyled, BoxLoginStyled, BtnLogin, DivStyled, InputStyled, PCadastreseStyled, PESStyled, SpanStyled } from './BoxLogin.styles.jsx'
 import { useForm } from "react-hook-form";
+import { useContext } from 'react'
+import { AuthContext } from "../../contexts/auth"
 
 export const BoxLogin = () => {
-    const {register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data)
+    const { authenticated, login } = useContext(AuthContext);
 
+    const {register, handleSubmit, formState: { errors } } = useForm();
+
+    const onSubmit = (email, password) => {
+        console.log("submit", email, password)
+        login(email, password)
+    }
+    
     return(
         <main>
             <BoxLoginStyled>
                 <AcessarStyled>Acessar</AcessarStyled>
+                {String(authenticated)}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <DivStyled>
                         <PESStyled>E-mail</PESStyled>

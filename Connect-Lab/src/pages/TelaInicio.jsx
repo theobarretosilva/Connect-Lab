@@ -1,6 +1,13 @@
+import { HeaderInicio } from "../components/HeaderInicio/HeaderInicio";
+import { PrevisaoTempo } from "../components/PrevisaoTempo/PrevisaoTempo"
 
 export const TelaInicio = () => {
-    return <h1>Tela de inicio</h1>
+    return(
+        <>
+            <HeaderInicio />
+            <PrevisaoTempo />
+        </>
+    )
 }
 
 export default TelaInicio;
