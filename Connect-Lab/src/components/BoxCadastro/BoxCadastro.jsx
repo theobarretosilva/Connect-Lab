@@ -1,28 +1,30 @@
 import { PESStyled } from "../BoxLogin/BoxLogin.styles"
 import { BoxCadastroStyled, BtnCadastrese, CadastreseStyled, DivBaseStyled, DivCamposStyled, InputCadastroStyled, PLoginStyled } from "./BoxCadastro.styles"
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
+// import { ErrorMessage } from "@hookform/error-message";
 
 export const BoxCadastro = () => {
 
-const {register, handleSubmit, setValue, setFocus, errors} = useForm();
+    const {register, handleSubmit, setValue, setFocus } = useForm();
 
-const onSubmit = (e) => {
-    console.log(e)
-}
+    const onSubmit = (e) => {
+        e.preventDefault();
 
-const checkCEP = (e) => {
-    const cep = e.target.value.replace(/\D/g, '');
-    fetch(`https://viacep.com.br/ws/${cep}/json/`)
-        .then((res) => res.json())
-        .then((data) => {
-            setValue('address', data.logradouro);
-            setValue('state', data.uf)
-            setValue('city', data.localidade);
-            setValue('neighborhood', data.bairro);
-            setFocus('addressNumber');
-    })
-}
+        console.log(e)
+    }
+
+    const checkCEP = (e) => {
+        const cep = e.target.value.replace(/\D/g, '');
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then((res) => res.json())
+            .then((data) => {
+                setValue('address', data.logradouro);
+                setValue('state', data.uf)
+                setValue('city', data.localidade);
+                setValue('neighborhood', data.bairro);
+                setFocus('addressNumber');
+        })
+    }
 
     return(
         <BoxCadastroStyled>

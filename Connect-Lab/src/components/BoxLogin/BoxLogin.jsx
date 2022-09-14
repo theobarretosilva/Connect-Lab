@@ -1,19 +1,32 @@
-import './BoxLogin.styles.jsx'
-import { AcessarStyled, BoxLoginStyled, BtnLogin, DivStyled, InputStyled, PCadastreseStyled, PESStyled } from './BoxLogin.styles.jsx'
+import { AcessarStyled, BoxLoginStyled, BtnLogin, DivStyled, InputStyled, PCadastreseStyled, PESStyled, SpanStyled } from './BoxLogin.styles.jsx'
+import { useForm } from "react-hook-form";
 
 export const BoxLogin = () => {
+    const {register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data)
+
     return(
         <main>
             <BoxLoginStyled>
                 <AcessarStyled>Acessar</AcessarStyled>
-                <form>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <DivStyled>
                         <PESStyled>E-mail</PESStyled>
-                        <InputStyled placeholder='Seu e-mail' type={'email'}/>
+                        {errors.email?.type === 'required' && <SpanStyled>Preenchimento obrigatório!</SpanStyled>}
+                        <InputStyled
+                            placeholder='Seu e-mail' 
+                            type={'email'} 
+                            {...register("email", {required: true})}
+                        />
                     </DivStyled>
                     <DivStyled>
                         <PESStyled>Senha</PESStyled>
-                        <InputStyled placeholder='Sua senha' type={'password'}/>
+                        {errors.senha?.type === 'required' && <SpanStyled>Preenchimento obrigatório!</SpanStyled>}
+                        <InputStyled 
+                            placeholder='Sua senha' 
+                            type={'password'} 
+                            {...register("senha", {required: true, minLength: 8})} 
+                        />
                     </DivStyled>
                     <BtnLogin>Fazer login</BtnLogin>
                 </form>

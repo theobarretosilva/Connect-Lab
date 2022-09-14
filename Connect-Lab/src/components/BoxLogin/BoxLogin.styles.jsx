@@ -66,3 +66,8 @@ export const PCadastreseStyled = styled.p`
     text-align: center;
     cursor: pointer;
 `
+
+export const SpanStyled = styled.span`
+    font-size: 14px;
+    color: red;
+`
