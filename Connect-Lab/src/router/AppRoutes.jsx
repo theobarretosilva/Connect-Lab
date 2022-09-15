@@ -4,12 +4,14 @@ import TelaInicio from '../pages/TelaInicio'
 import TelaDispositivos from "../pages/TelaDispositivos";
 import { AuthProvider } from '../contexts/auth'
 import TelaPerfil from "../pages/TelaPerfil";
+import TelaCadastro from "../pages/TelaCadastro"
 
 const AppRoutes = () => {
     return(
         <Router>
             <AuthProvider>
                 <Routes>
+                    <Route exact path="/cadastroDeUsuarios" element={<TelaCadastro />} />
                     <Route exact path="/login" element={<TelaLogin />} />
                     <Route exact path="/inicio" element={<TelaInicio />} />
                     <Route exact path="/dispositivos" element={<TelaDispositivos />} />

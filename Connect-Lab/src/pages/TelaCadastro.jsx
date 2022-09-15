@@ -9,3 +9,5 @@ export const TelaCadastro = () => {
         </>
     )
 }
+
+export default TelaCadastro;

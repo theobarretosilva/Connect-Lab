@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const SectionTempoStyled = styled.section`
     background-color: white;
-    width: 80%;
+    width: 90%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     text-align: center;
     margin-top: 3%;
     justify-content: center;
     text-align: center;
-    margin-left: 9.7%;
+    margin-left: 5%;
 `
 
 export const PTempStyled = styled.p`
