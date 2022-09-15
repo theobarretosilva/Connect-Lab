@@ -8,5 +8,22 @@ export const DivDispositivoStyled = styled.div`
     display: flex;
 `
 export const ImgProdutoStyled = styled.img`
-    width: 60px;
+    width: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 6px;
+`
+
+export const DivRedondaStyled = styled.div`
+
+`
+
+export const BtnOnOffStyled = styled.button`
+    background-color: #38A3A5;
+    border: none;
+    border-radius: 50px;
+`
+
+export const IcoOnOffStyled = styled.img`
+
 `

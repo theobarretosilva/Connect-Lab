@@ -6,7 +6,7 @@ export const SectionTempoStyled = styled.section`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     text-align: center;
-    margin-top: 3%;
+    margin-top: 2%;
     justify-content: center;
     text-align: center;
     margin-left: 5%;
