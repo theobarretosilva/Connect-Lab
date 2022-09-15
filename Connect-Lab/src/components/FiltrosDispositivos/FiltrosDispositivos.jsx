@@ -1,6 +1,7 @@
-import { FiltroStyled, PFiltroSelecionado, PFiltro } from "./FiltrosDispositivos.styles"
+import { FiltroStyled, PFiltro, PFiltroSelecionado } from "./FiltrosDispositivos.styles"
 
 export const FiltroDispositivos = () => {
+
     return(
         <FiltroStyled>
             <PFiltroSelecionado>Todos</PFiltroSelecionado>

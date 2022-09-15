@@ -14,6 +14,7 @@ export const LinkInicioStyled = styled.a`
     text-decoration: underline;
     color: #D7FFDB;
     cursor: pointer;
+    padding: 0;
 `
 
 export const LinkDispPerfStyled = styled.a`

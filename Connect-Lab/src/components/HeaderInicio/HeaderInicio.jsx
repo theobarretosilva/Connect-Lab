@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { DivLogoStyled, HeaderStyled, ImgStyled, PLogoStyled } from "../Header/Header.styles"
 import { DivNavStyled, LinkDispPerfStyled, LinkInicioStyled} from "./HeaderInicio.styles"
 
@@ -14,7 +15,7 @@ export const HeaderInicio = () => {
             <DivNavStyled>
                 <LinkInicioStyled>Início</LinkInicioStyled>
                 <LinkDispPerfStyled>Dispositivos</LinkDispPerfStyled>
-                <LinkDispPerfStyled>Perfil</LinkDispPerfStyled>
+                <LinkDispPerfStyled><Link to={"/perfil"}>Perfil</Link></LinkDispPerfStyled>
             </DivNavStyled>
         </HeaderStyled>
     )

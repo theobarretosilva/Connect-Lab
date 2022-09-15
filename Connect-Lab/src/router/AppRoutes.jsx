@@ -14,7 +14,7 @@ const AppRoutes = () => {
                 <Routes>
                     <Route exact path="/cadastroDeUsuarios" element={<TelaCadastro />} />
                     <Route exact path="/login" element={<TelaLogin />} />
-                    <Route exact path="/inicio" element={<TelaInicio />} />
+                    <Route exact path="/" element={<TelaInicio />} />
                     <Route exact path="/dispositivos" element={<TelaDispositivos />} />
                     <Route exact path="/perfil" element={<TelaPerfil />} />
                     <Route element={<TelaNotFound />} />
