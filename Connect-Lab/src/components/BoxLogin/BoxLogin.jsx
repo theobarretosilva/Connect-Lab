@@ -35,18 +35,18 @@ export const BoxLogin = () => {
                             <PESStyled>E-mail</PESStyled>
                             {errors.email?.type === 'required' && <SpanStyled>Preenchimento obrigatório!</SpanStyled>}
                             <InputStyled
-                                placeholder='Seu e-mail' 
-                                type={'email'} 
-                                {...register("email", {required: true})}
+                                placeholder="Seu e-mail"
+                                type="email" 
+                                {...register("email")}
                             />
                         </DivStyled>
                         <DivStyled>
                             <PESStyled>Senha</PESStyled>
                             {errors.senha?.type === 'required' && <SpanStyled>Preenchimento obrigatório!</SpanStyled>}
                             <InputStyled 
-                                placeholder='Sua senha' 
-                                type={'password'} 
-                                {...register("senha", {required: true, minLength: 8})} 
+                                placeholder="Sua senha" 
+                                type="password" 
+                                {...register("senha")} 
                             />
                         </DivStyled>
                         <BtnLogin>Fazer login</BtnLogin>

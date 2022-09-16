@@ -1,0 +1,33 @@
+{
+    "nomeCompleto": {
+        "required": "Nome completo é um campo obrigatório"
+    },
+    "email": {
+        "required": "E-mail é um campo obrigatório",
+        "email": "O e-mail informado é inválido"
+    },
+    "cep": {
+        "typeError": "O cep informado é inválido"
+    },
+    "estado": {
+        "required": "Estado é um campo obrigatório"
+    },
+    "cidade": {
+        "required": "Cidade é um campo obrigatório"
+    },
+    "bairro": {
+        "required": "Bairro é um campo obrigatório"
+    },
+    "endereco": {
+        "required": "Endereço é um campo obrigatório"
+    },
+    "numeroEndereco": {
+        "typeError": "O número informado é inválido"
+    },
+    "senha": {
+        "min": "A senha deve ter no mínimo 8 caracteres"
+    },
+    "confirmacaoSenha": {
+        "oneOf": "As senhas não estão iguais"
+    }
+}

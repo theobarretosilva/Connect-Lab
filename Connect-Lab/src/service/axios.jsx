@@ -1,7 +1,7 @@
 import axios from "axios";
 import { buildAxiosConfig } from "../utils/config.jsx";
 
-export const cadastrarUsu = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
+export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
     const dadosCadastro = {
         email: emailUsu,
         password: senha,
@@ -19,8 +19,12 @@ export const cadastrarUsu = (nome, dataNasc, emailUsu, linkFoto, senha, telefone
             complement: complemento
         }
     }
-
-    return axios.post("http://localhost:3030/auth/register", dadosCadastro)
+    
+    axios.post('http://localhost:3030/auth/register', dadosCadastro)
+    .then((response) => console.log(response))
+    .catch((error) => console.log(error))
+    
+    
 }
 
 export const fazerLogin = (usuario, senha) => {

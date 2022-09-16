@@ -29,6 +29,7 @@ export const PESStyled = styled.p`
     color: black;
     margin-top: 0;
     margin-bottom: 1px;
+    width: 100%;
 `
 
 export const InputStyled = styled.input`

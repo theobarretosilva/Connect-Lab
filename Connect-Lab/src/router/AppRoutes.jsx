@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import TelaLogin from '../pages/TelaLogin'
 import TelaInicio from '../pages/TelaInicio'
 import TelaDispositivos from "../pages/TelaDispositivos";
@@ -13,7 +13,7 @@ const AppRoutes = () => {
     const history = createBrowserHistory();
 
     return(
-        <Router history={history}>
+        <BrowserRouter history={history}>
             <AuthProvider>
                 <Routes>
                     <Route exact path="/cadastroUsu" element={<TelaCadastro />} />
@@ -24,7 +24,7 @@ const AppRoutes = () => {
                     <Route element={<TelaNotFound />} />
                 </Routes>
             </AuthProvider>
-        </Router>
+        </BrowserRouter>
     )
 }
 

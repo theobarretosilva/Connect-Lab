@@ -20,10 +20,11 @@ export const CadastreseStyled = styled.h2`
 export const DivBaseStyled = styled.div`
     display: flex;
     justify-content: space-around;
+    margin-bottom: 1%;
 `
 
-export const DivCamposStyled = styled.div`
-
+export const DivInputStyled = styled.div`
+    width: 40%;
 `
 
 export const InputCadastroStyled = styled.input`
@@ -32,13 +33,8 @@ export const InputCadastroStyled = styled.input`
     border-radius: 10px;
     width: 320px;
     height: 38px;
-    margin-bottom: 12px;
     padding-left: 7px;
     font-family: 'Inter', sans-serif;
-
-    ::-webkit-calendar-picker-indicator{
-        padding-right: 10px;
-    }
 `
 
 export const BtnCadastrese = styled.button`
