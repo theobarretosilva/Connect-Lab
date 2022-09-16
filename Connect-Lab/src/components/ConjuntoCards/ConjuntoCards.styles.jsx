@@ -9,5 +9,5 @@ export const SectionDispositivosStyled = styled.section`
 export const DivDispositivosStyled = styled.div`
     display: flex;
     justify-content: space-around;
-    margin-top: 25px;
+    margin-top: 15px;
 `

@@ -6,13 +6,17 @@ import TelaPerfil from "../pages/TelaPerfil";
 import TelaCadastro from "../pages/TelaCadastro"
 import { AuthProvider } from "../contexts/auth";
 import TelaNotFound from "../pages/TelaNotFound"
+import { createBrowserHistory } from "history";
 
 const AppRoutes = () => {
+
+    const history = createBrowserHistory();
+
     return(
         <Router history={history}>
             <AuthProvider>
                 <Routes>
-                    <Route exact path="/cadastroDeUsuarios" element={<TelaCadastro />} />
+                    <Route exact path="/cadastroUsu" element={<TelaCadastro />} />
                     <Route exact path="/login" element={<TelaLogin />} />
                     <Route exact path="/" element={<TelaInicio />} />
                     <Route exact path="/dispositivos" element={<TelaDispositivos />} />

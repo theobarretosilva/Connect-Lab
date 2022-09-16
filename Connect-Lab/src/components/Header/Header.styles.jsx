@@ -14,7 +14,7 @@ export const DivLogoStyled = styled.div`
 `
 
 export const ImgStyled = styled.img`
-    width: 4%;
+    width: 5%;
     margin: 1.2%;
     margin-left: 2%;
 `
@@ -24,7 +24,7 @@ export const PLogoStyled = styled.p`
     font-weight: 600;
     color: white;
     font-size: 19px;
-    margin-top: 2.3%;
+    margin-top: 2.7%;
 `
 
 export const BtnLogin = styled.button`
@@ -32,7 +32,6 @@ export const BtnLogin = styled.button`
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     width: 9%;
-    height: 100%;
     padding: 10px;
     margin: 2%;
     margin-right: 3%;
@@ -42,4 +41,14 @@ export const BtnLogin = styled.button`
     color: white;
     font-size: 18px;
     cursor: pointer;
+`
+
+export const PBtnStyled = styled.p`
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 `

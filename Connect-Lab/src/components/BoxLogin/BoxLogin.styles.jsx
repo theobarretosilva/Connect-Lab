@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const BoxLoginStyled = styled.div`
-    background: #FFFFFF;
+    background: ${({ theme }) => theme.colors.primaria};
     box-shadow: 4px 4px 15px 1px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    margin-top: 15.4%;
+    margin-top: 8.2%;
     justify-content: center;
     width: 28%;
     margin-left: 35%;
@@ -12,7 +12,7 @@ export const BoxLoginStyled = styled.div`
 
 export const AcessarStyled = styled.h2`
     font-weight: 600;
-    color: #22577A;
+    color: ${({ theme }) => theme.colors.terciaria};
     text-align: center;
     padding-top: 20px;
     font-size: 25px;
@@ -32,8 +32,8 @@ export const PESStyled = styled.p`
 `
 
 export const InputStyled = styled.input`
-    background: #FFFFFF;
-    border: 2px solid #38A3A5;
+    background: ${({ theme }) => theme.colors.primaria};
+    border: 2px solid ${({ theme }) => theme.colors.quaternaria};
     border-radius: 10px;
     width: 90%;
     height: 38px;
@@ -43,10 +43,10 @@ export const InputStyled = styled.input`
 `
 
 export const BtnLogin = styled.button`
-    background: #22577A;
+    background: ${({ theme }) => theme.colors.terciaria};
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    color: white;
+    color: ${({ theme }) => theme.colors.primaria};
     font-weight: 600;
     font-size: 16px;
     width: 68%;
@@ -60,7 +60,7 @@ export const BtnLogin = styled.button`
 export const PCadastreseStyled = styled.p`
     font-weight: 400;
     text-decoration: underline;
-    color: black;
+    color: ${({ theme }) => theme.colors.secundaria};
     padding-bottom: 5%;
     margin-top: 6.4%;
     text-align: center;
@@ -69,5 +69,5 @@ export const PCadastreseStyled = styled.p`
 
 export const SpanStyled = styled.span`
     font-size: 14px;
-    color: red;
+    color: ${({ theme }) => theme.colors.senaria};
 `
