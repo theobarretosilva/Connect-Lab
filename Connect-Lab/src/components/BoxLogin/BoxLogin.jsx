@@ -1,4 +1,4 @@
-import { AcessarStyled, BoxLoginStyled, BtnLogin, DivStyled, InputStyled, PCadastreseStyled, PESStyled, SpanStyled } from './BoxLogin.styles.jsx'
+import { AcessarStyled, BoxLoginStyled, BtnLogin, DivStyled, InputStyled, PCadastreseStyled, PESStyled } from './BoxLogin.styles.jsx'
 import { useForm } from "react-hook-form";
 import { useContext } from 'react'
 import { AuthContext } from "../../contexts/auth"
@@ -6,34 +6,35 @@ import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../styles/defaultThemes'
 import { Link } from 'react-router-dom';
 import * as yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup';
+import { InputError } from '../InputError/InputError.jsx';
 
 export const BoxLogin = () => {
     // eslint-disable-next-line no-unused-vars
     const { authenticated, login } = useContext(AuthContext);
 
-    const {register, handleSubmit, formState: { errors } } = useForm();
-
-    const onSubmit = (email, password) => {
-        console.log("submit", email, password)
-        login(email, password)
-    }
-
-    // eslint-disable-next-line no-unused-vars
     const validationSchema = yup.object({
         email: yup.string().email().required(),
         senha: yup.string().min(8).required()
     })
+
+    const {register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(validationSchema)});
+
+    const onSubmit = (email, password) => {
+        console.log("Dados de login: ", email, password)
+        login(email, password)
+    }
     
     return(
         <ThemeProvider theme={myTheme}>
             <main>
                 <BoxLoginStyled>
                     <AcessarStyled>Acessar</AcessarStyled>
-                    {/* {String(authenticated)} */}
+                    {String(authenticated)}
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <DivStyled>
                             <PESStyled>E-mail</PESStyled>
-                            {errors.email?.type === 'required' && <SpanStyled>Preenchimento obrigatório!</SpanStyled>}
+                            {errors?.email?.type && <InputError type={errors.email.type} field="email" />}
                             <InputStyled
                                 placeholder="Seu e-mail"
                                 type="email" 
@@ -42,7 +43,7 @@ export const BoxLogin = () => {
                         </DivStyled>
                         <DivStyled>
                             <PESStyled>Senha</PESStyled>
-                            {errors.senha?.type === 'required' && <SpanStyled>Preenchimento obrigatório!</SpanStyled>}
+                            {errors?.senha?.type && <InputError type={errors.senha.type} field="senha" />}
                             <InputStyled 
                                 placeholder="Sua senha" 
                                 type="password" 

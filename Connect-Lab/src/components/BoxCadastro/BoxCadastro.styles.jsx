@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const BoxCadastroStyled = styled.section`
-    background: #FFFFFF;
-    box-shadow: 4px 4px 15px 1px rgba(0, 0, 0, 0.25);
+    background: ${({ theme }) => theme.colors.primaria};
+    box-shadow: 4px 4px 15px 1px ${({ theme }) => theme.colors.octonaria};
     border-radius: 15px;
     margin-top: 40px;
     width: 60%;
@@ -12,7 +12,7 @@ export const BoxCadastroStyled = styled.section`
 export const CadastreseStyled = styled.h2`
     font-weight: 600;
     font-size: 25px;
-    color: #22577A;
+    color: ${({ theme }) => theme.colors.terciaria};
     padding-top: 20px;
     text-align: center;
 `
@@ -28,8 +28,8 @@ export const DivInputStyled = styled.div`
 `
 
 export const InputCadastroStyled = styled.input`
-    background: #FFFFFF;
-    border: 2px solid #38A3A5;
+    background: ${({ theme }) => theme.colors.primaria};
+    border: 2px solid ${({ theme }) => theme.colors.quaternaria};
     border-radius: 10px;
     width: 320px;
     height: 38px;
@@ -38,10 +38,10 @@ export const InputCadastroStyled = styled.input`
 `
 
 export const BtnCadastrese = styled.button`
-    background: #22577A;
-    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+    background: ${({ theme }) => theme.colors.terciaria};
+    box-shadow: 0px 3px 2px ${({ theme }) => theme.colors.octonaria};
     border-radius: 20px;
-    color: white;
+    color: ${({ theme }) => theme.colors.primaria};
     font-weight: 600;
     font-size: 16px;
     width: 50%;
@@ -55,7 +55,7 @@ export const BtnCadastrese = styled.button`
 export const PLoginStyled = styled.p`
     font-weight: 500;
     text-decoration: underline;
-    color: black;
+    color: ${({ theme }) => theme.colors.secundaria};
     padding-bottom: 3%;
     margin-top: 4%;
     text-align: center;

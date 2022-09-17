@@ -1,5 +1,6 @@
 import { DivDispositivosStyled, SectionDispositivosStyled } from "./ConjuntoCards.styles"
 import { CardDispositivo } from "../CardDispositivo/CardDispositivo"
+import { CardDispSelecionado } from "../CardDispSelecionado/CardDispSelecionado"
 
 export const ConjuntoCards = () => {
     // const infoCard = [
@@ -28,13 +29,19 @@ export const ConjuntoCards = () => {
     return(
         <SectionDispositivosStyled>
             <DivDispositivosStyled>
-                <CardDispositivo />
+                <CardDispSelecionado />
                 <CardDispositivo />
                 <CardDispositivo />
                 <CardDispositivo />
             </DivDispositivosStyled>
             <DivDispositivosStyled>
+                <CardDispSelecionado />
                 <CardDispositivo />
+                <CardDispositivo />
+                <CardDispositivo />
+            </DivDispositivosStyled>
+            <DivDispositivosStyled>
+                <CardDispSelecionado />
                 <CardDispositivo />
                 <CardDispositivo />
                 <CardDispositivo />

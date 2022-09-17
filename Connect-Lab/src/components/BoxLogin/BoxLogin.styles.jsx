@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BoxLoginStyled = styled.div`
     background: ${({ theme }) => theme.colors.primaria};
-    box-shadow: 4px 4px 15px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 15px 1px ${({ theme }) => theme.colors.octonaria};
     border-radius: 15px;
     margin-top: 8.2%;
     justify-content: center;
@@ -26,7 +26,7 @@ export const DivStyled = styled.div`
 export const PESStyled = styled.p`
     font-weight: 500;
     font-size: 16px;
-    color: black;
+    color: ${({ theme }) => theme.colors.secundaria};
     margin-top: 0;
     margin-bottom: 1px;
     width: 100%;
@@ -45,7 +45,7 @@ export const InputStyled = styled.input`
 
 export const BtnLogin = styled.button`
     background: ${({ theme }) => theme.colors.terciaria};
-    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 3px 2px ${({ theme }) => theme.colors.octonaria};
     border-radius: 20px;
     color: ${({ theme }) => theme.colors.primaria};
     font-weight: 600;

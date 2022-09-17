@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const DivDispositivoStyled = styled.div`
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: ${({ theme }) => theme.colors.primaria};
+    box-shadow: 0px 4px 4px ${({ theme }) => theme.colors.octonaria};
     border-radius: 10px;
-    width: 200px;
+    width: 283px;
     display: flex;
     cursor: pointer;
 `
@@ -16,7 +16,7 @@ export const ImgProdutoStyled = styled.img`
 `
 
 export const PNomeDispStyled = styled.p`
-    color: #2E4052;
+    color: ${({ theme }) => theme.colors.nonaria};
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -30,7 +30,7 @@ export const DivLocOnOffStyled = styled.div`
 
 export const PLocOnOffStyled= styled.p`
     text-align: center;
-    color: #5D6D7E;
+    color: ${({ theme }) => theme.colors.decenaria};
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 `
