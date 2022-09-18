@@ -2,7 +2,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { buildAxiosConfig } from "../utils/config.jsx";
 import "react-toastify/dist/ReactToastify.css";
-import { redirect } from "react-router";
+// import { Redirect } from "react-router-dom";
+import { enviarLS } from "../components/BoxCadastro/BoxCadastro.jsx";
 
 export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
     const dadosCadastro = {
@@ -28,7 +29,8 @@ export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, e
         console.log(response)
         console.log(response.statusText)
         if(response.statusText === "Created"){
-            setTimeout(()=> redirect("/login"), 5100)
+            // setTimeout(()=> {<Redirect to={"/"} />}, 5100)
+            enviarLS(response.data)
             return toast.success('Usuário cadastrado com sucesso! Redirecionando você para a página de login!', {
                 position: "top-right",
                 autoClose: 5000,

@@ -4,7 +4,7 @@ import TelaInicio from '../pages/TelaInicio'
 import TelaDispositivos from "../pages/TelaDispositivos";
 import TelaPerfil from "../pages/TelaPerfil";
 import TelaCadastro from "../pages/TelaCadastro"
-import { AuthProvider } from "../contexts/auth";
+import { AutenticacaoProvider } from "../contexts/Autenticacao/AutenticacaoProvider";
 import TelaNotFound from "../pages/TelaNotFound"
 import { createBrowserHistory } from "history";
 
@@ -14,7 +14,7 @@ const AppRoutes = () => {
 
     return(
         <BrowserRouter history={history}>
-            <AuthProvider>
+            <AutenticacaoProvider>
                 <Routes>
                     <Route exact path="/cadastroUsu" element={<TelaCadastro />} />
                     <Route exact path="/login" element={<TelaLogin />} />
@@ -23,7 +23,7 @@ const AppRoutes = () => {
                     <Route exact path="/perfil" element={<TelaPerfil />} />
                     <Route element={<TelaNotFound />} />
                 </Routes>
-            </AuthProvider>
+            </AutenticacaoProvider>
         </BrowserRouter>
     )
 }

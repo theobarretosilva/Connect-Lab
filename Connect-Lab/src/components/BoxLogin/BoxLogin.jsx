@@ -1,7 +1,7 @@
 import { AcessarStyled, BoxLoginStyled, BtnLogin, DivStyled, InputStyled, PCadastreseStyled, PESStyled } from './BoxLogin.styles.jsx'
 import { useForm } from "react-hook-form";
 import { useContext } from 'react'
-import { AuthContext } from "../../contexts/auth"
+import { AutenticacaoContext } from '../../contexts/Autenticacao/AutenticacaoContext.jsx';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../styles/defaultThemes'
 import { Link } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { InputError } from '../InputError/InputError.jsx';
 
 export const BoxLogin = () => {
     // eslint-disable-next-line no-unused-vars
-    const { authenticated, login } = useContext(AuthContext);
+    const { authenticated, login } = useContext(AutenticacaoContext);
 
     const validationSchema = yup.object({
         email: yup.string().email().required(),

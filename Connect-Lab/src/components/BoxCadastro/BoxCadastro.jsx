@@ -11,6 +11,10 @@ import { ThemeProvider } from "styled-components";
 import { myTheme } from "../../styles/defaultThemes";
 import { cep } from "../../utils/validations";
 
+export const enviarLS = (dados) => {
+    localStorage.setItem("Dados usuario", JSON.stringify(dados))
+}
+
 export const BoxCadastro = () => {
 
     const validationSchema = yup.object({
@@ -40,7 +44,7 @@ export const BoxCadastro = () => {
         try{
             post(e.nomeCompleto, e.dataDeNscimento, e.email, e.linkFotoPerfil, e.senha, e.telefone, e.cep, e.estado, e.cidade, e.bairro, e.endereco, e.numeroEndereco, e.complementoEndereco)
         } catch (error) {
-
+            console.log(error)
         }
         console.log(e)
     }
