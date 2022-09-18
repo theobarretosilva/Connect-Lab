@@ -1,9 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { buildAxiosConfig } from "../utils/config.jsx";
+import { buildAxiosConfig } from "../../utils/config.jsx";
 import "react-toastify/dist/ReactToastify.css";
+import { enviarLS } from "../../components/BoxCadastro/BoxCadastro.jsx";
 // import { Redirect } from "react-router-dom";
-import { enviarLS } from "../components/BoxCadastro/BoxCadastro.jsx";
 
 export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
     const dadosCadastro = {
@@ -29,7 +29,7 @@ export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, e
         console.log(response)
         console.log(response.statusText)
         if(response.statusText === "Created"){
-            // setTimeout(()=> {<Redirect to={"/"} />}, 5100)
+            // setTimeout(()=> {<Redirect to={{ pathname: "/", state: { from: location } }} replace={true}/>}, 5100)
             enviarLS(response.data)
             return toast.success('Usuário cadastrado com sucesso! Redirecionando você para a página de login!', {
                 position: "top-right",
@@ -45,13 +45,30 @@ export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, e
     .catch((error) => console.log(error))
 }
 
-export const fazerLogin = (email, senha) => {
+export const fazerLogin = (emailUsu, senhaUsu) => {
     const dadosLogin = {
-      username: email,
-      password: senha,
+      email: emailUsu,
+      password: senhaUsu,
     };
   
-    return axios.post("https://connectlab.onrender.com/auth/login", dadosLogin);
+    return axios.post("http://localhost:3030/auth/login", dadosLogin)
+    .then((response) => {
+        console.log(response)
+        console.log(response.statusText)
+        if(response.statusText === "OK"){
+            enviarLS(response.data)
+            return toast.success('Login efetuado com sucesso. Redirecionando você para a página inicial!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+            })
+        }
+    })
+    .catch((error) => console.log(error))
 };
   
 export const buscarListaDispositivos = () => {

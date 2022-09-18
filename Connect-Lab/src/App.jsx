@@ -1,11 +1,17 @@
-import './App.css'
-import AppRoutes from './router/AppRoutes'
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./router";
+import { AutenticacaoProvider } from "./contexts";
+import "./assets/css/App.css"
+import { createBrowserHistory } from "history";
 
 function App() {
+  const history = createBrowserHistory();
   return (
-    <div className="App">
-      <AppRoutes />
-    </div>
+    <BrowserRouter history={history}>
+      <AutenticacaoProvider>
+        <Router />
+      </AutenticacaoProvider>
+    </BrowserRouter>
   )
 }
 

@@ -1,12 +1,12 @@
 import { ConjuntoCards } from "../components/ConjuntoCards/ConjuntoCards";
 import { FiltroDispositivos } from "../components/FiltrosDispositivos/FiltrosDispositivos";
-import { HeaderInicio } from "../components/HeaderInicio/HeaderInicio";
+import { HeaderbarInicio } from "../components/HeaderbarInicio/HeaderbarInicio";
 import { PrevisaoTempo } from "../components/PrevisaoTempo/PrevisaoTempo"
 
 export const TelaInicio = () => {
     return(
         <>
-            <HeaderInicio />
+            <HeaderbarInicio />
             <PrevisaoTempo />
             <FiltroDispositivos />
             <ConjuntoCards />

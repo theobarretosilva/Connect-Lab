@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BoxCadastroStyled = styled.section`
     background: ${({ theme }) => theme.colors.primaria};
-    box-shadow: 4px 4px 15px 1px ${({ theme }) => theme.colors.octonaria};
+    box-shadow: 4px 4px 15px 1px ${({ theme }) => theme.sombras.primaria};
     border-radius: 15px;
     margin-top: 40px;
     width: 60%;
@@ -39,7 +39,7 @@ export const InputCadastroStyled = styled.input`
 
 export const BtnCadastrese = styled.button`
     background: ${({ theme }) => theme.colors.terciaria};
-    box-shadow: 0px 3px 2px ${({ theme }) => theme.colors.octonaria};
+    box-shadow: 0px 3px 2px ${({ theme }) => theme.sombras.primaria};
     border-radius: 20px;
     color: ${({ theme }) => theme.colors.primaria};
     font-weight: 600;

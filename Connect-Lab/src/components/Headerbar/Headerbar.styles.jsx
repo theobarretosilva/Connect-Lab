@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderStyled = styled.header`
+export const HeaderbarStyled = styled.header`
     background-color: #22577A;
     top: 0;
     left: 0;

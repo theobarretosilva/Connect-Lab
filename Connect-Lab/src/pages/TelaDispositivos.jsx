@@ -1,7 +1,7 @@
-import { HeaderInicio } from "../components/HeaderInicio/HeaderInicio"
+import { HeaderbarInicio } from "../components/HeaderbarInicio/HeaderbarInicio"
 
 export const TelaDispositivos = () => {
-    return <HeaderInicio />
+    return <HeaderbarInicio />
 }
 
 export default TelaDispositivos;

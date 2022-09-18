@@ -2,21 +2,21 @@ import styled from "styled-components";
 
 export const DivDispositivoStyled = styled.div`
     background: ${({ theme }) => theme.colors.primaria};
-    box-shadow: 0px 4px 4px ${({ theme }) => theme.colors.octonaria};
+    box-shadow: 0px 4px 4px ${({ theme }) => theme.sombras.primaria};
     border-radius: 10px;
     width: 283px;
     display: flex;
+    justify-content: space-around;
     cursor: pointer;
 `
 export const ImgProdutoStyled = styled.img`
     width: 70px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 6px;
 `
 
 export const PNomeDispStyled = styled.p`
-    color: ${({ theme }) => theme.colors.nonaria};
+    color: ${({ theme }) => theme.colors.octonaria};
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -26,11 +26,26 @@ export const PNomeDispStyled = styled.p`
 
 export const DivLocOnOffStyled = styled.div`
     text-align: center;
+    margin-right: 5%;
+    margin-top: 2.6%;
 `
 
 export const PLocOnOffStyled= styled.p`
     text-align: center;
-    color: ${({ theme }) => theme.colors.decenaria};
+    color: ${({ theme }) => theme.colors.nonaria};
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    font-size: 14px;
+`
+
+export const BtnOnOffStyled = styled.button`
+    width: 24%;
+    height: 40%;
+    background: ${({ theme }) => theme.colors.terciaria};
+    box-shadow: inset 0px 8px 8px ${({ theme }) => theme.sombras.primaria};
+    border-radius: 10px;
+    border: none;
+    margin-top: 9%;
+    cursor: pointer;
+    margin-right: 3%;
 `

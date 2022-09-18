@@ -7,8 +7,13 @@ export const myTheme = {
         quinaria: '#D7FFDB',
         senaria: 'red',
         setenaria: '#BDBDBD',
-        octonaria: 'rgba(0, 0, 0, 0.25)',
-        nonaria: '#2E4052',
-        decenaria: '#5D6D7E'
+        octonaria: '#2E4052',
+        nonaria: '#5D6D7E'
     },
+
+    sombras:{
+        primaria: 'rgba(0, 0, 0, 0.25)',
+        secundaria: 'rgba(50, 50, 93, 0.25)',
+        terciaria: 'rgba(0, 0, 0, 0.3)'
+    }
 };

@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup';
 import { InputError } from '../InputError/InputError.jsx';
+import { fazerLogin } from '../../service/api/axios.jsx';
+import { GlobalStyle } from '../../styles/globalStyle.jsx';
 
 export const BoxLogin = () => {
     // eslint-disable-next-line no-unused-vars
@@ -20,13 +22,14 @@ export const BoxLogin = () => {
 
     const {register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(validationSchema)});
 
-    const onSubmit = (email, password) => {
-        console.log("Dados de login: ", email, password)
-        login(email, password)
+    const onSubmit = (dados) => {
+        console.log(dados.email, dados.senha)
+        fazerLogin(dados.email, dados.senha)
     }
     
     return(
         <ThemeProvider theme={myTheme}>
+            <GlobalStyle />
             <main>
                 <BoxLoginStyled>
                     <AcessarStyled>Acessar</AcessarStyled>

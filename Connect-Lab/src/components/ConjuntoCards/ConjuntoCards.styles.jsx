@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const SectionDispositivosStyled = styled.section`
-    margin-left: 1.7%;
-    margin-right: 1.7%;
-    margin-bottom: 0;
+    margin-left: 3.8%;
+    margin-right:3.8%;
+    margin-top: 2.5%;
 `
 
 export const DivDispositivosStyled = styled.div`

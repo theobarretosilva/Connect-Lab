@@ -23,5 +23,4 @@ export const LinkDispPerfStyled = styled.a`
     font-size: 18px;
     color: white;
     cursor: pointer;
-    text-decoration: none;
 `
