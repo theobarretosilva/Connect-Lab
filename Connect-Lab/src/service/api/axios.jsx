@@ -30,7 +30,7 @@ export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, e
         console.log(response.statusText)
         if(response.statusText === "Created"){
             // setTimeout(()=> {<Redirect to={{ pathname: "/", state: { from: location } }} replace={true}/>}, 5100)
-            enviarLS(response.data)
+            localStorage.setItem("Dados usuario", JSON.stringify(response.data))
             return toast.success('Usuário cadastrado com sucesso! Redirecionando você para a página de login!', {
                 position: "top-right",
                 autoClose: 5000,

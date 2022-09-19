@@ -15,7 +15,7 @@ export const HeaderbarInicio = () => {
             <DivNavStyled>
                 <LinkInicioStyled>Início</LinkInicioStyled>
                 <Link to={"/dispositivos"}><LinkDispPerfStyled>Dispositivos</LinkDispPerfStyled></Link>
-               <Link to={"/perfil"}><LinkDispPerfStyled>Perfil</LinkDispPerfStyled></Link>
+                <Link to={"/perfil"}><LinkDispPerfStyled>Perfil</LinkDispPerfStyled></Link>
             </DivNavStyled>
         </HeaderbarStyled>
     )

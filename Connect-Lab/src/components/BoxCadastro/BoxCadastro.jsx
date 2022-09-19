@@ -11,10 +11,6 @@ import { ThemeProvider } from "styled-components";
 import { myTheme } from "../../styles/defaultThemes";
 import { cep } from "../../utils/validations";
 
-export const enviarLS = (dados) => {
-    localStorage.setItem("Dados usuario", JSON.stringify(dados))
-}
-
 export const BoxCadastro = () => {
 
     const validationSchema = yup.object({

@@ -1,7 +1,11 @@
 // import { HeaderInicio } from "../components/HeaderInicio/HeaderInicio"
 
+import { HeaderbarPerfil } from "../components/HeaderbarPerfil/HeaderbarPerfil";
+
 export const TelaPerfil = () => {
-    return <h1>Tela de perfil</h1>
+    return(
+        <HeaderbarPerfil />
+    )
 }
 
 export default TelaPerfil;
