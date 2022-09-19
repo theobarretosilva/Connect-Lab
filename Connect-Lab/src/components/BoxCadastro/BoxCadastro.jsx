@@ -163,7 +163,7 @@ export const BoxCadastro = () => {
                                     <InputCadastroStyled
                                         type="text"
                                         {...register("endereco")}
-                                        placeholder={"Ex: Avenida 9 de julho"}
+                                        placeholder="Ex: Avenida 9 de julho"
                                     />
                                     {errors?.endereco?.type && <InputError type={errors.endereco.type} field="endereco" />}
                                 </DivInputStyled>

@@ -2,8 +2,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { buildAxiosConfig } from "../../utils/config.jsx";
 import "react-toastify/dist/ReactToastify.css";
-import { enviarLS } from "../../components/BoxCadastro/BoxCadastro.jsx";
-// import { Redirect } from "react-router-dom";
 
 export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
     const dadosCadastro = {
@@ -56,7 +54,7 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
         console.log(response)
         console.log(response.statusText)
         if(response.statusText === "OK"){
-            enviarLS(response.data)
+            localStorage.setItem("Dados usuario", JSON.stringify(response.data))
             return toast.success('Login efetuado com sucesso. Redirecionando você para a página inicial!', {
                 position: "top-right",
                 autoClose: 5000,
