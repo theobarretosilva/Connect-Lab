@@ -103,7 +103,8 @@ export const atualizaUsuario = (nome, dataNasc, emailUsu, linkFoto, senha, telef
 }
 
 export const buscarListaDispositivos = () => {
-    return axios.get("http://localhost:3030/devices", buildAxiosConfig());
+    return axios.get("http://localhost:3030/devices", buildAxiosConfig())
+            .then((response) => console.log(response.data));
 };
 
 export const buscarUsuario = () => {

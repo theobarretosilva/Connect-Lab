@@ -4,10 +4,18 @@ export const SectionDetalheStyled = styled.section`
     background: ${({ theme }) => theme.colors.primaria};
     box-shadow: 4px 4px 15px 1px ${({ theme }) => theme.sombras.primaria};
     border-radius: 15px;
-    margin-top: 3%;
+    margin-top: 1.7%;
     margin-left: 37%;
     width: 25%;
     text-align: center;
+`
+
+export const TipoDispStyled = styled.p`
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: ${({ theme }) => theme.colors.quaternaria};
+    margin-top: 2%;
 `
 
 export const PStyled = styled.p`
