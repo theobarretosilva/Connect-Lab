@@ -12,7 +12,7 @@ export const LinkInicioStyled = styled.a`
     font-weight: 500;
     font-size: 18px;
     text-decoration: underline;
-    color: #D7FFDB;
+    color: ${({ theme }) => theme.colors.quinaria};
     cursor: pointer;
     padding: 0;
 `
@@ -21,6 +21,6 @@ export const LinkDispPerfStyled = styled.a`
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: ${({ theme }) => theme.colors.primaria};
     cursor: pointer;
 `

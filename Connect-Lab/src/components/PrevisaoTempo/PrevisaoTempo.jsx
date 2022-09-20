@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { myTheme } from "../../styles/defaultThemes";
 import { SectionTempoStyled, InfoTempoStyled, PTempStyled, PLocalStyled, PSenPreChaStyled } from './PrevisaoTempo.styles'
+import { GlobalStyle } from "../../styles/globalStyle";
 
 export const PrevisaoTempo = () => {
 
@@ -24,16 +27,20 @@ export const PrevisaoTempo = () => {
     };
 
     return(
-        <SectionTempoStyled>
-            {weather ? (<PTempStyled>{weather.main.temp}°C</PTempStyled>) : (<PTempStyled>Calma</PTempStyled>)}
-            {weather ? (<PLocalStyled>{weather.name}</PLocalStyled>) : (<PLocalStyled>Calma</PLocalStyled>)}
-            <InfoTempoStyled>
-                {weather ? (<PSenPreChaStyled>Sensação térmica: {weather.main.feels_like}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
-                <p><b>-</b></p>
-                {weather ? (<PSenPreChaStyled>Umidade: {weather.main.humidity}%</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
-                <p><b>-</b></p>
-                {weather ? (<PSenPreChaStyled>Velocidade do vento: {weather.wind.speed} km/h</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
-            </InfoTempoStyled>
-        </SectionTempoStyled>        
+        <ThemeProvider theme={myTheme}>
+            <GlobalStyle />
+            <SectionTempoStyled>
+                {weather ? (<PTempStyled>{weather.main.temp}°C</PTempStyled>) : (<PTempStyled>Calma</PTempStyled>)}
+                {weather ? (<PLocalStyled>{weather.name}</PLocalStyled>) : (<PLocalStyled>Calma</PLocalStyled>)}
+                <InfoTempoStyled>
+                    {weather ? (<PSenPreChaStyled>Sensação térmica: {weather.main.feels_like}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
+                    <p><b>-</b></p>
+                    {weather ? (<PSenPreChaStyled>Umidade: {weather.main.humidity}%</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
+                    <p><b>-</b></p>
+                    {weather ? (<PSenPreChaStyled>Velocidade do vento: {weather.wind.speed} km/h</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
+                </InfoTempoStyled>
+            </SectionTempoStyled>        
+        </ThemeProvider>
+        
     )
 }

@@ -1,5 +1,5 @@
 export const buildAxiosConfig = () => {
-    const token = localStorage.getItem("meutoken");
+    const token = JSON.parse(localStorage.getItem("Dados usuario")).token;
   
     if (!token) {
       throw new Error("O token não está no localStorage!!");

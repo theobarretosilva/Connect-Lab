@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { TelaLogin, TelaInicio, TelaDispositivos, TelaPerfil, TelaCadastro, TelaNotFound } from '../pages';
+import { TelaLogin, TelaInicio, TelaDispositivos, TelaPerfil, TelaCadastro, TelaNotFound, TelaDetalhesDisp } from '../pages';
+import { TelaEditDadosUsu } from "../pages/TelaEditDadosUsu";
 
 export const Router = () => {
     return(
@@ -9,6 +10,8 @@ export const Router = () => {
             <Route path="/" element={<TelaInicio />} />
             <Route path="/dispositivos" element={<TelaDispositivos />} />
             <Route path="/perfil" element={<TelaPerfil />} />
+            <Route path="/editarDadosUsu" element={<TelaEditDadosUsu />} />
+            <Route path="/detalhesDisp" element={<TelaDetalhesDisp />} />
             <Route element={<TelaNotFound />} />
         </Routes>
     )

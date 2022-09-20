@@ -1,27 +1,43 @@
 import { ThemeProvider } from "styled-components"
-import { DadosUsuStyled, Div1Styled, DivEnderecoStyled, DivNomeDadosSyled, H1Styled, ImgRedondaStyled, MainPerfilStyled, NomeUsuStyled, SpanImgStyled } from "./BoxPerfil.styles"
+import { BtnAteraDadosStyled, CepStyled, DadosUsuStyled, Div1Styled, DivEnderecoStyled, DivNomeDadosSyled, EnderecoStyled, H1Styled, ImgRedondaStyled, LinhaStyled, MainPerfilStyled, NomeUsuStyled, PEnderecoStyled, SairStyled } from "./BoxPerfil.styles"
 import { myTheme } from "../../styles/defaultThemes"
+import { GlobalStyle } from "../../styles/globalStyle";
+import { Link } from "react-router-dom";
 
 export const BoxPerfil = () => {
     const dadosLS = JSON.parse(localStorage.getItem("Dados usuario"));
-    const linkFotoUsu = () => {
-       return dadosLS.user.photoUrl
-    };
+    const linkFotoUsu = dadosLS.user.photoUrl;
+    const nomeUsu = dadosLS.user.fullName;
+    const emailUsu = dadosLS.user.email;
+    const foneUsu = " - " + dadosLS.user.phone;
+    const cepUsu = dadosLS.user.userAddress.zipCode;
+    const ruaUsu = dadosLS.user.userAddress.street;
+    const complementoUsu = ", " + dadosLS.user.userAddress.complement;
+    const bairroUsu = " - " + dadosLS.user.userAddress.neighborhood;
+    const cidadeUsu = dadosLS.user.userAddress.city;
+    const estadoUsu = dadosLS.user.userAddress.state;
 
     return(
         <ThemeProvider theme={myTheme}>
+            <GlobalStyle />
             <MainPerfilStyled>
                 <H1Styled>Meu perfil</H1Styled>
                 <Div1Styled>
-                    <SpanImgStyled>{dadosLS ? (<ImgRedondaStyled src={linkFotoUsu} alt="Foto escolhida pelo usuário"/>) : (<ImgRedondaStyled src="../src/assets/imgs/userGenerico.png" alt="Foto genérica"/>)}</SpanImgStyled>
+                    {dadosLS ? (<ImgRedondaStyled src={linkFotoUsu} alt="Foto escolhida pelo usuário"/>) : (<ImgRedondaStyled src="../src/assets/imgs/userGenerico.png" alt="Foto genérica"/>)}
                     <DivNomeDadosSyled>
-                        <NomeUsuStyled>Nome completo</NomeUsuStyled>
-                        <DadosUsuStyled>email@email.com - (12) 34567-8910</DadosUsuStyled>
+                        <NomeUsuStyled>{nomeUsu}</NomeUsuStyled>
+                        <DadosUsuStyled>{emailUsu}{foneUsu}</DadosUsuStyled>
                     </DivNomeDadosSyled>
                 </Div1Styled>
                 <DivEnderecoStyled>
-                    
+                    <PEnderecoStyled>Endereço</PEnderecoStyled>
+                    <LinhaStyled />
+                    <CepStyled>{cepUsu}</CepStyled>
+                    <EnderecoStyled>{ruaUsu}{complementoUsu}{bairroUsu}</EnderecoStyled>
+                    <EnderecoStyled>{cidadeUsu} - {estadoUsu}</EnderecoStyled>
                 </DivEnderecoStyled>
+                <Link to="/editarDadosUsu"><BtnAteraDadosStyled>Alterar meus dados</BtnAteraDadosStyled></Link>
+                <SairStyled>Sair</SairStyled>
             </MainPerfilStyled>
         </ThemeProvider>
         
