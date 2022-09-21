@@ -27,7 +27,6 @@ export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, e
         console.log(response)
         console.log(response.statusText)
         if(response.statusText === "Created"){
-            // setTimeout(()=> {<Redirect to={{ pathname: "/", state: { from: location } }} replace={true}/>}, 5100)
             localStorage.setItem("Dados usuario", JSON.stringify(response.data))
             localStorage.setItem("meutoken", JSON.stringify(response.data.token))
             return toast.success('Usuário cadastrado com sucesso! Redirecionando você para a página de login!', {
@@ -104,7 +103,7 @@ export const atualizaUsuario = (nome, dataNasc, emailUsu, linkFoto, senha, telef
 
 export const buscarListaDispositivos = () => {
     return axios.get("http://localhost:3030/devices", buildAxiosConfig())
-            .then((response) => console.log(response.data));
+        .then((response) => response.data);
 };
 
 export const buscarUsuario = () => {
