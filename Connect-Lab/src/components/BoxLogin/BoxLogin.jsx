@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { AutenticacaoContext } from '../../contexts/Autenticacao/AutenticacaoContext.jsx';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../styles/defaultThemes'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup';
 import { InputError } from '../InputError/InputError.jsx';
@@ -22,9 +22,13 @@ export const BoxLogin = () => {
 
     const {register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(validationSchema)});
 
+    const redireciona = useNavigate();
+    const timeOutRed = setTimeout(redireciona('/'), 5100)
+
     const onSubmit = (dados) => {
         console.log(dados.email, dados.senha)
         fazerLogin(dados.email, dados.senha)
+            .then(timeOutRed)
     }
     
     return(
