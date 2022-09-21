@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const GroupDispAddStyled = styled.section`
+    position: absolute;
     display: flex;
     justify-content: space-between;
-    width: 1190px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 3;
+    width: 1200px;
     margin-left: 6%;
-    margin-top: 2%;
+    margin-right: 50%;
 `
 
 export const CardStyled = styled.section`
@@ -14,6 +18,7 @@ export const CardStyled = styled.section`
     box-shadow: 0px 5px 4px ${({ theme }) => theme.sombras.primaria};
     border-radius: 20px;
     text-align: center;
+    margin-top: 2%;
 `
 
 export const ImgDispStyled = styled.img`
