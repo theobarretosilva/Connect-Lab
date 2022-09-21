@@ -9,7 +9,7 @@ export const GroupDispAddStyled = styled.section`
     flex: 3;
     width: 1200px;
     margin-left: 6%;
-    margin-right: 50%;
+    padding-right: 0.5%;
 `
 
 export const CardStyled = styled.section`

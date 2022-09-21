@@ -5,13 +5,18 @@ import { BtnAddStyled, CardStyled, ImgDispStyled, TipoDispStyled } from "./CardA
 import PropTypes from 'prop-types';
 
 export const CardAddDisp = ({ linkFotoDispositivo, nomeDisposivito, idDispositivo }) => {
+    const abreModal = (e) => {
+        const idDispositivo = e.target.value;
+        console.log(idDispositivo)
+    }
+
     return(
         <ThemeProvider theme={myTheme}>
             <GlobalStyle />
             <CardStyled>
                 <ImgDispStyled src={linkFotoDispositivo}/>
                 <TipoDispStyled>{nomeDisposivito}</TipoDispStyled>
-                <BtnAddStyled value={idDispositivo}>Adicionar</BtnAddStyled>
+                <BtnAddStyled onClick={abreModal} value={idDispositivo}>Adicionar</BtnAddStyled>
             </CardStyled>
         </ThemeProvider>
     )
