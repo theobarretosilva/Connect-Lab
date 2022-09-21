@@ -2,6 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { buildAxiosConfig } from "../../utils/config.jsx";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
     const dadosCadastro = {
@@ -57,6 +58,8 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
             localStorage.setItem("Dados usuario", JSON.stringify(response.data))
             localStorage.setItem("meutoken", JSON.stringify(response.data.token))
             localStorage.setItem("idUsuario", JSON.stringify(response.data.user._id))
+            const redirecionar = useNavigate();
+            setTimeout(redirecionar('/'), 5100)
             return toast.success('Login efetuado com sucesso. Redirecionando você para a página inicial!', {
                 position: "top-right",
                 autoClose: 5000,

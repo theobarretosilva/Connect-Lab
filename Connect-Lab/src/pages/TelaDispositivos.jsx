@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+import { useState } from "react";
 import { CardAddDisp } from "../components/CardAddDisp/CardAddDisp";
 import { GroupDispAddStyled } from "../components/CardAddDisp/CardAddDisp.styles";
 import { HeaderbarDisp } from "../components/HeaderbarDisp/HeaderbarDisp";
@@ -10,23 +10,33 @@ export const TelaDispositivos = () => {
     const json = JSON.parse(localStorage.getItem("Dispositivos"));
 
     buscarListaDispositivos()
-        .then((response) => {
-            const dispositivos = response;
-            localStorage.setItem("Dispositivos", JSON.stringify(dispositivos))
-        })
+    .then((response) => {
+        const dispositivos = response;
+        localStorage.setItem("Dispositivos", JSON.stringify(dispositivos))
+    })
+
+    const [filteredData, setFilteredData] = useState([]);
+
+    function handleFilter(event){
+        const searchWord = event.target.value;
+        const newFilter = json.filter((value) => {
+            return value.name.toLowerCase().includes(searchWord.toLowerCase());
+        });
+        setFilteredData(newFilter)
+    }
 
     return(
         <>
             <HeaderbarDisp />
             <TituloTelaDisp />
-            <SearchBarDisp />
+            <SearchBarDisp func={handleFilter}/>
             <GroupDispAddStyled>
-                {json.map((dispositivos) => (
+                {filteredData.map((value, key) => (
                     <CardAddDisp
-                        key={dispositivos._id}
-                        linkFotoDispositivo={dispositivos.photoUrl}
-                        nomeDisposivito={dispositivos.name}
-                        idDispositivo={dispositivos._id}
+                        key={key}
+                        linkFotoDispositivo={value.photoUrl}
+                        nomeDisposivito={value.name}
+                        idDispositivo={value._id}
                     />
                 ))}
             </GroupDispAddStyled>
