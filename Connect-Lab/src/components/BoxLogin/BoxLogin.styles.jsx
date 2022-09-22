@@ -23,7 +23,7 @@ export const DivStyled = styled.div`
     margin-left: 6%;
 `
 
-export const PESStyled = styled.p`
+export const PESStyled = styled.label`
     font-weight: 500;
     font-size: 16px;
     color: ${({ theme }) => theme.colors.secundaria};

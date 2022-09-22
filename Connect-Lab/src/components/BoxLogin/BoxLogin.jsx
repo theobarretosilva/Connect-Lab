@@ -23,12 +23,12 @@ export const BoxLogin = () => {
     const {register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(validationSchema)});
 
     const redireciona = useNavigate();
+    // eslint-disable-next-line no-unused-vars
     const timeOutRed = setTimeout(redireciona('/'), 5100)
 
     const onSubmit = (dados) => {
         console.log(dados.email, dados.senha)
         fazerLogin(dados.email, dados.senha)
-            .then(timeOutRed)
     }
     
     return(

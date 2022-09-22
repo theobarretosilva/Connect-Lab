@@ -3,11 +3,11 @@ import { myTheme } from "../../styles/defaultThemes"
 import { GlobalStyle } from "../../styles/globalStyle"
 import { BtnAddStyled, CardStyled, ImgDispStyled, TipoDispStyled } from "./CardAddDisp.styles"
 import PropTypes from 'prop-types';
+import { ModalAddDisp } from "../ModalAddDisp/ModalAddDisp";
 
 export const CardAddDisp = ({ linkFotoDispositivo, nomeDisposivito, idDispositivo }) => {
-    const abreModal = (e) => {
-        const idDispositivo = e.target.value;
-        console.log(idDispositivo)
+    const abreModal = () => {
+        return <ModalAddDisp />
     }
 
     return(
