@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components"
 import { myTheme } from "../../styles/defaultThemes"
 import { GlobalStyle } from "../../styles/globalStyle"
-import { BoxModalStyled, DivSelectStyled, LabelModalStyled, SelectModalStyled, TituloModalStyled } from "./ModalAddDisp.style"
+import { BoxModalStyled, BtnAddStyled, BtnCancelarStyled, DivBtnsStyled, DivSelectStyled, LabelModalStyled, SelectModalStyled, TituloModalStyled } from "./ModalAddDisp.style"
 
 export const ModalAddDisp = () => {
     return(
@@ -28,6 +28,10 @@ export const ModalAddDisp = () => {
                         <option value="areaDeServico">Área de serviço</option>
                     </SelectModalStyled>
                 </DivSelectStyled>
+                <DivBtnsStyled>
+                    <BtnCancelarStyled>Cancelar</BtnCancelarStyled>
+                    <BtnAddStyled>Adicionar</BtnAddStyled>
+                </DivBtnsStyled>
             </BoxModalStyled>
         </ThemeProvider>
     )

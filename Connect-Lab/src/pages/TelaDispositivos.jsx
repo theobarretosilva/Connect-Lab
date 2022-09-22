@@ -8,14 +8,14 @@ import { buscarListaDispositivos } from "../service/api/axios"
 
 export const TelaDispositivos = () => {
     const json = JSON.parse(localStorage.getItem("Dispositivos"));
+    const [filteredData, setFilteredData] = useState(json);
 
+    
     buscarListaDispositivos()
     .then((response) => {
         const dispositivos = response;
         localStorage.setItem("Dispositivos", JSON.stringify(dispositivos))
     })
-
-    const [filteredData, setFilteredData] = useState([]);
 
     function handleFilter(event){
         const searchWord = event.target.value;

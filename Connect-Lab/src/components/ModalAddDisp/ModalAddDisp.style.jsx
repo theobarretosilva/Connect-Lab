@@ -41,9 +41,50 @@ export const SelectModalStyled = styled.select`
     font-weight: 400;
     font-size: 16px;
     color: ${({ theme }) => theme.colors.nonaria};
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     padding-left: 8px;
     margin-top: 0.5%;
     width: 90%;
+    cursor: pointer;
+`
+
+export const DivBtnsStyled = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 8%;
+    margin-top: 6%;
+    margin-right: 8%;
+    padding-bottom: 5%;
+`
+
+export const BtnCancelarStyled = styled.button`
+    background: ${({ theme }) => theme.colors.terciaria};
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    color: ${({ theme }) => theme.colors.primaria};
+    border: none;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    cursor: pointer;
+`
+
+export const BtnAddStyled = styled.button`
+    background: ${({ theme }) => theme.colors.quaternaria};
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    color: ${({ theme }) => theme.colors.primaria};
+    border: none;
+    padding-top: 2.2%;
+    padding-bottom: 2.2%;
+    padding-left: 4%;
+    padding-right: 4%;
+    cursor: pointer;
 `
