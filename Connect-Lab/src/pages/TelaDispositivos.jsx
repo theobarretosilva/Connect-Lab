@@ -13,6 +13,7 @@ export const TelaDispositivos = () => {
     const achaDisp = (event) => {
         const idDispositivo = event.target.value;
         const dados = json.filter((e) => e._id === idDispositivo)
+        localStorage.setItem("dadosDispSelected", JSON.stringify(dados))
         console.log(dados)
     }
     
