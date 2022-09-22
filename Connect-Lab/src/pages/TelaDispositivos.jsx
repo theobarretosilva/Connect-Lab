@@ -5,16 +5,19 @@ import { HeaderbarDisp } from "../components/HeaderbarDisp/HeaderbarDisp";
 import { SearchBarDisp } from "../components/SearchBarDisp/SearchBarDisp";
 import { TituloTelaDisp } from "../components/TituloTelaDisp/TituloTelaDisp";
 import { buscarListaDispositivos } from "../service/api/axios"
+import { ModalAddDisp } from "../components/ModalAddDisp/ModalAddDisp"
 
 export const TelaDispositivos = () => {
     const json = JSON.parse(localStorage.getItem("Dispositivos"));
     const [filteredData, setFilteredData] = useState(json);
+    const [openModal, setOpenModal] = useState(false)
 
     const achaDisp = (event) => {
         const idDispositivo = event.target.value;
         const dados = json.filter((e) => e._id === idDispositivo)
         localStorage.setItem("dadosDispSelected", JSON.stringify(dados))
         console.log(dados)
+        setOpenModal(true)
     }
     
     buscarListaDispositivos()
@@ -30,6 +33,8 @@ export const TelaDispositivos = () => {
         });
         setFilteredData(newFilter)
     }
+
+    const dadosDispositivo = JSON.parse(localStorage.getItem("dadosDispSelected"));
 
     return(
         <>
@@ -47,6 +52,13 @@ export const TelaDispositivos = () => {
                     />
                 ))}
             </GroupDispAddStyled>
+            {openModal && dadosDispositivo.map((value, key) => (
+                <ModalAddDisp 
+                    nomeDispositivo={value.name}
+                    closeModal={setOpenModal}
+                    key={key}    
+                />
+            ))}
         </>
     )
 }

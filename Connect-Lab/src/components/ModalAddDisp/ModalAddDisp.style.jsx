@@ -1,5 +1,19 @@
 import styled from "styled-components";
 
+export const FundoTotalModalStyled = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120, 120, 120, 0.75);
+    position: fixed;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+`
+
 export const BoxModalStyled = styled.section`
     background: ${({ theme }) => theme.colors.primaria};
     box-shadow: 0px 8px 4px ${({ theme }) => theme.sombras.primaria};
@@ -8,6 +22,9 @@ export const BoxModalStyled = styled.section`
     margin-top: 6%;
     width: 40%;
     margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
 `
 
 export const TituloModalStyled = styled.h1`
@@ -15,7 +32,7 @@ export const TituloModalStyled = styled.h1`
     font-weight: 700;
     font-size: 26px;
     color: ${({ theme }) => theme.colors.terciaria};
-    padding-top: 2%;
+    padding-top: 3%;
 `
 
 export const DivSelectStyled = styled.div`
@@ -54,7 +71,7 @@ export const DivBtnsStyled = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-left: 8%;
-    margin-top: 6%;
+    margin-top: 7%;
     margin-right: 8%;
     padding-bottom: 5%;
 `
