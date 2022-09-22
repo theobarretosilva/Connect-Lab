@@ -3,12 +3,8 @@ import { myTheme } from "../../styles/defaultThemes"
 import { GlobalStyle } from "../../styles/globalStyle"
 import { BtnAddStyled, CardStyled, ImgDispStyled, TipoDispStyled } from "./CardAddDisp.styles"
 import PropTypes from 'prop-types';
-import { ModalAddDisp } from "../ModalAddDisp/ModalAddDisp";
 
-export const CardAddDisp = ({ linkFotoDispositivo, nomeDisposivito, idDispositivo }) => {
-    const abreModal = () => {
-        return <ModalAddDisp />
-    }
+export const CardAddDisp = ({ linkFotoDispositivo, nomeDisposivito, idDispositivo, noClique }) => {
 
     return(
         <ThemeProvider theme={myTheme}>
@@ -16,7 +12,7 @@ export const CardAddDisp = ({ linkFotoDispositivo, nomeDisposivito, idDispositiv
             <CardStyled>
                 <ImgDispStyled src={linkFotoDispositivo}/>
                 <TipoDispStyled>{nomeDisposivito}</TipoDispStyled>
-                <BtnAddStyled onClick={abreModal} value={idDispositivo}>Adicionar</BtnAddStyled>
+                <BtnAddStyled onClick={noClique} value={idDispositivo}>Adicionar</BtnAddStyled>
             </CardStyled>
         </ThemeProvider>
     )
@@ -26,4 +22,5 @@ CardAddDisp.propTypes = {
     linkFotoDispositivo: PropTypes.string.isRequired,
     nomeDisposivito: PropTypes.string.isRequired,
     idDispositivo: PropTypes.string.isRequired,
+    noClique: PropTypes.func.isRequired,
 };

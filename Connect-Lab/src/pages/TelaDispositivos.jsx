@@ -10,6 +10,11 @@ export const TelaDispositivos = () => {
     const json = JSON.parse(localStorage.getItem("Dispositivos"));
     const [filteredData, setFilteredData] = useState(json);
 
+    const achaDisp = (event) => {
+        const idDispositivo = event.target.value;
+        const dados = json.filter((e) => e._id === idDispositivo)
+        console.log(dados)
+    }
     
     buscarListaDispositivos()
     .then((response) => {
@@ -37,6 +42,7 @@ export const TelaDispositivos = () => {
                         linkFotoDispositivo={value.photoUrl}
                         nomeDisposivito={value.name}
                         idDispositivo={value._id}
+                        noClique={achaDisp}
                     />
                 ))}
             </GroupDispAddStyled>
