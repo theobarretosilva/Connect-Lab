@@ -3,8 +3,20 @@ import { myTheme } from "../../styles/defaultThemes"
 import { GlobalStyle } from "../../styles/globalStyle"
 import { BoxModalStyled, BtnAddStyled, BtnCancelarStyled, DivBtnsStyled, DivSelectStyled, FundoTotalModalStyled, LabelModalStyled, SelectModalStyled, TituloModalStyled } from "./ModalAddDisp.style"
 import PropTypes from "prop-types"
+import { buscarListaLocais, addDispUsu } from "../../service/api/axios"
 
 export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }) => {
+    buscarListaLocais()
+    .then((value) => {
+        localStorage.setItem("locaisAddDisp", JSON.stringify(value))
+        value.map((valor)=> console.log(valor.description))
+    })
+
+    const mandarDispAPI = () => {
+        addDispUsu()
+    }
+
+    const locaisDisp = JSON.parse(localStorage.getItem("locaisAddDisp"));
     return(
         <ThemeProvider theme={myTheme}>
             <GlobalStyle />
@@ -14,8 +26,10 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }
                     <DivSelectStyled>
                         <LabelModalStyled>Local *</LabelModalStyled>
                         <SelectModalStyled required>
-                            <option selected disabled value="">Selecione o local</option>
-                            <option value={idLocal}>{nomeLocal}</option>
+                            <option selected disabled value="selecioneLocal">Selecione o local</option>
+                            {locaisDisp.map((value, key)=> {
+                                return <option value={value._id} key={key}>{value.description}</option>
+                            })}
                         </SelectModalStyled>
                     </DivSelectStyled>
                     <DivSelectStyled>
@@ -31,11 +45,10 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }
                     </DivSelectStyled>
                     <DivBtnsStyled>
                         <BtnCancelarStyled onClick={()=> closeModal(false)}>Cancelar</BtnCancelarStyled>
-                        <BtnAddStyled>Adicionar</BtnAddStyled>
+                        <BtnAddStyled onClick={mandarDispAPI}>Adicionar</BtnAddStyled>
                     </DivBtnsStyled>
                 </BoxModalStyled>
             </FundoTotalModalStyled>
-            
         </ThemeProvider>
     );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { myTheme } from "../../styles/defaultThemes";
 import { SectionTempoStyled, InfoTempoStyled, PTempStyled, PLocalStyled, PSenPreChaStyled } from './PrevisaoTempo.styles'
@@ -16,7 +16,6 @@ export const PrevisaoTempo = () => {
         base: 'https://api.openweathermap.org/data/2.5/'
     };
 
-    // eslint-disable-next-line no-unused-vars
     const searchVai = () => {
         fetch(`${apiWeather.base}weather?q=${cidadeUser}&units=metric&APPID=${apiWeather.key}`)
             .then(res => res.json())
@@ -25,6 +24,10 @@ export const PrevisaoTempo = () => {
                 console.log(result)
             });
     };
+
+    useEffect(() => {
+        searchVai();
+    }, [])
 
     return(
         <ThemeProvider theme={myTheme}>
