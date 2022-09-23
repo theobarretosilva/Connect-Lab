@@ -17,7 +17,7 @@ export const LinkInicioStyled = styled.a`
     padding: 0;
 `
 
-export const LinkDispPerfStyled = styled.a`
+export const LinkDispPerfStyled = styled.p`
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 18px;

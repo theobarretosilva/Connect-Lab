@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FiltroStyled = styled.div`
     display: flex;
+    justify-content: center;
     gap: 20px;
     margin-top: 4%;
     margin-left: 5%;

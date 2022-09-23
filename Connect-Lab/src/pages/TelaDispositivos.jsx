@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CardAddDisp } from "../components/CardAddDisp/CardAddDisp";
 import { GroupDispAddStyled } from "../components/CardAddDisp/CardAddDisp.styles";
 import { HeaderbarDisp } from "../components/HeaderbarDisp/HeaderbarDisp";
@@ -8,7 +8,8 @@ import { buscarListaDispositivos, buscarListaLocais } from "../service/api/axios
 import { ModalAddDisp } from "../components/ModalAddDisp/ModalAddDisp"
 
 export const TelaDispositivos = () => {
-    
+    const json = JSON.parse(localStorage.getItem("dispositivos"));
+    const [filteredData, setFilteredData] = useState(json);
     const [openModal, setOpenModal] = useState(false)
 
     const achaDisp = (event) => {
@@ -22,7 +23,7 @@ export const TelaDispositivos = () => {
     buscarListaDispositivos()
     .then((response) => {
         const dispositivos = response;
-        localStorage.setItem("Dispositivos", JSON.stringify(dispositivos))
+        localStorage.setItem("dispositivos", JSON.stringify(dispositivos))
     })
 
     function handleFilter(event){
@@ -43,13 +44,9 @@ export const TelaDispositivos = () => {
         })
     }
 
-    const noClick = () => {
-        achaDisp();
+    useEffect(()=> {
         carregaLocais();
-    }
-
-    const json = JSON.parse(localStorage.getItem("Dispositivos"));
-    const [filteredData, setFilteredData] = useState(json);
+    }, []);
 
     return(
         <>
@@ -63,7 +60,7 @@ export const TelaDispositivos = () => {
                         linkFotoDispositivo={value.photoUrl}
                         nomeDisposivito={value.name}
                         idDispositivo={value._id}
-                        noClique={noClick}
+                        noClique={achaDisp}
                     />
                 ))}
             </GroupDispAddStyled>
