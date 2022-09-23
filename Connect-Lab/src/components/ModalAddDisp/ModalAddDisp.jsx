@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ThemeProvider } from "styled-components"
 import { myTheme } from "../../styles/defaultThemes"
 import { GlobalStyle } from "../../styles/globalStyle"
@@ -8,8 +9,15 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { InputError } from "../InputError/InputError"
 import { useForm } from "react-hook-form"
 import { addDispUsu } from "../../service/api/axios"
+import { Loading } from "../Loading/Loading"
+import { useState } from "react"
 
-export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }) => {
+export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
+    const [removeLoading, setRemoveLoading] = useState(true)
+
+    const idUsuario = JSON.parse(localStorage.getItem("idUsuario"))
+    const dispSelecionado = JSON.parse(localStorage.getItem("dadosDispSelected"));
+    const idDispSelecionado = dispSelecionado[0]._id;
     
     const validacao = yup.object({
         local: yup.string().required(),
@@ -19,11 +27,11 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }
     const {register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(validacao)});
 
     const onSubmit = (dados) => {
-        console.log(dados.local, dados.comodo)
-    }
-    
-    const mandarDispAPI = () => {
-        addDispUsu()
+        console.log(idUsuario, idDispSelecionado, dados.local, dados.comodo)
+        addDispUsu(idUsuario, idDispSelecionado, dados.local, dados.comodo)
+            .then((value) => {
+                console.log(value)
+            })
     }
 
     const locaisDisp = JSON.parse(localStorage.getItem("locaisAddDisp"));
@@ -46,7 +54,7 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }
                         </DivSelectStyled>
                         <DivSelectStyled>
                             <LabelModalStyled>Cômodo *</LabelModalStyled>
-                            <SelectModalStyled required>
+                            <SelectModalStyled {...register("comodo")}>
                                 <option selected disabled value="">Selecione o cômodo</option>
                                 <option value="quarto">Quarto</option>
                                 <option value="cozinha">Cozinha</option>
@@ -57,7 +65,7 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }
                         </DivSelectStyled>
                         <DivBtnsStyled>
                             <BtnCancelarStyled onClick={()=> closeModal(false)}>Cancelar</BtnCancelarStyled>
-                            <BtnAddStyled onClick={mandarDispAPI}>Adicionar</BtnAddStyled>
+                            <BtnAddStyled>Adicionar</BtnAddStyled>
                         </DivBtnsStyled>
                     </form>
                     
@@ -70,6 +78,4 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }
 ModalAddDisp.propTypes = {
     nomeDispositivo: PropTypes.string.isRequired,
     closeModal: PropTypes.func.isRequired,
-    nomeLocal: PropTypes.string.isRequired,
-    idLocal: PropTypes.string.isRequired,
 };

@@ -1,30 +1,32 @@
-import { DivDispositivoStyled, ImgProdutoStyled, PNomeDispStyled, DivLocOnOffStyled, PLocOnOffStyled, BtnOnOffStyled } from "./CardDispositivo.styles"
-import PropTypes from 'prop-types'
-import { ThemeProvider } from "styled-components"
-import { myTheme } from "../../styles/defaultThemes"
-import { GlobalStyle } from "../../styles/globalStyle"
+import { DivDispositivoStyled, ImgProdutoStyled, PNomeDispStyled, DivLocOnOffStyled, PLocOnOffStyled, BtnOffStyled, ImgOnOffStyled } from "./CardDispositivo.styles";
+import PropTypes from 'prop-types';
+import { ThemeProvider } from "styled-components";
+import { myTheme } from "../../styles/defaultThemes";
+import { GlobalStyle } from "../../styles/globalStyle";
 
-export const CardDispositivo = (key, img, descriImg, nomeDisp, localDisp, onOff) => {
+export const CardDispositivo = (img, descriImg, nomeDisp, localDisp, POnOff, BtnOnOff) => {
     return(
         <ThemeProvider theme={myTheme}>
             <GlobalStyle />
             <DivDispositivoStyled>
-                <ImgProdutoStyled src="https://intelbras.vteximg.com.br/arquivos/ids/160115-1000-1000/ews_407_front_cor.jpg?v=637564221001370000"/>
+                <ImgProdutoStyled src={img} alt={descriImg}/>
                 <DivLocOnOffStyled>
-                    <PNomeDispStyled>Lâmpada</PNomeDispStyled>
-                    <PLocOnOffStyled>Quarto | OFF</PLocOnOffStyled>
+                    <PNomeDispStyled>{nomeDisp}</PNomeDispStyled>
+                    <PLocOnOffStyled>{localDisp} | {POnOff}</PLocOnOffStyled>
                 </DivLocOnOffStyled>
-                <BtnOnOffStyled><img src="../../../src/assets/imgs/OnOff.png" alt="Imagem on ou off" /></BtnOnOffStyled>
+                {BtnOnOff}
+                <BtnOffStyled><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>
             </DivDispositivoStyled>
         </ThemeProvider>
         
-    )
-}
+    );
+};
 
 CardDispositivo.propTypes = {
     img: PropTypes.string.isRequired,
     descriImg: PropTypes.string,
     nomeDisp: PropTypes.string.isRequired,
     localDisp: PropTypes.string.isRequired,
-    onOff: PropTypes.string.isRequired
-}
+    POnOff: PropTypes.string.isRequired,
+    BtnOnOff: PropTypes.node.isRequired,
+};

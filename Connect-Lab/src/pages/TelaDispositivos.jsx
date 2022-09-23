@@ -4,11 +4,11 @@ import { GroupDispAddStyled } from "../components/CardAddDisp/CardAddDisp.styles
 import { HeaderbarDisp } from "../components/HeaderbarDisp/HeaderbarDisp";
 import { SearchBarDisp } from "../components/SearchBarDisp/SearchBarDisp";
 import { TituloTelaDisp } from "../components/TituloTelaDisp/TituloTelaDisp";
-import { buscarListaDispositivos, buscarListaLocais } from "../service/api/axios"
+import { buscarDispUsu, buscarListaDispositivos, buscarListaLocais } from "../service/api/axios"
 import { ModalAddDisp } from "../components/ModalAddDisp/ModalAddDisp"
 
 export const TelaDispositivos = () => {
-    const json = JSON.parse(localStorage.getItem("dispositivos"));
+    const json = JSON.parse(localStorage.getItem("dispositivosSistema"));
     const [filteredData, setFilteredData] = useState(json);
     const [openModal, setOpenModal] = useState(false)
 
@@ -23,7 +23,7 @@ export const TelaDispositivos = () => {
     buscarListaDispositivos()
     .then((response) => {
         const dispositivos = response;
-        localStorage.setItem("dispositivos", JSON.stringify(dispositivos))
+        localStorage.setItem("dispositivosSistema", JSON.stringify(dispositivos))
     })
 
     function handleFilter(event){
@@ -46,6 +46,7 @@ export const TelaDispositivos = () => {
 
     useEffect(()=> {
         carregaLocais();
+        buscarDispUsu();
     }, []);
 
     return(

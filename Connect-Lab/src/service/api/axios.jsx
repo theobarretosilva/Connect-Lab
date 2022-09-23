@@ -120,8 +120,24 @@ export const addDispUsu = (idUser, idDevice, idLocal, comodo) => {
         "room": comodo
     }
 
-    axios.post("http://localhost:3030/userDevices", dadosDispUsu, buildAxiosConfig())
-        .then((response) => console.log(response))
+    return axios.post("http://localhost:3030/userDevices", dadosDispUsu, buildAxiosConfig())
+        .then((response) => {
+            console.log(response)
+            console.log(response.statusText)
+        })
+        .catch((error) => console.log(error))
+}
+
+export const buscarDispUsu = () => {
+    const dadosLS = JSON.parse(localStorage.getItem("idUsuario"));
+
+    return axios.get(`http://localhost:3030/userDevices/user/${dadosLS}`, buildAxiosConfig())
+        .then((response)=> {
+            console.log(response)
+            console.log(response.data)
+            localStorage.setItem("dispositivosDoUsuario", JSON.stringify(response.data))
+        })
+        .catch((error) => console.log(error))
 }
 
 export const buscarUsuario = () => {

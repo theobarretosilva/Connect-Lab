@@ -15,7 +15,7 @@ export const BoxDetalhesDisp = () => {
                     <ImgDetalhesStyled src="https://intelbras.vteximg.com.br/arquivos/ids/160115-1000-1000/ews_407_front_cor.jpg?v=637564221001370000"/>
                     <DivOnOffStyled>
                         <PStyled>Dispositivo ligado</PStyled>
-                        <BtnDetailsDispStyled><img src="../../../src/assets/imgs/OnOff.png" alt="Imagem on ou off" /></BtnDetailsDispStyled>
+                        <BtnDetailsDispStyled><img src="../../../src/assets/imgs/On.png" alt="Imagem on ou off" /></BtnDetailsDispStyled>
                     </DivOnOffStyled>
                     <DivInfoStyled>
                         <H3InfoStyled>Informações do dispositivo</H3InfoStyled>
