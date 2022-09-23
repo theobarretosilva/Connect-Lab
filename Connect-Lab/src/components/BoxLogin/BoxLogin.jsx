@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { AutenticacaoContext } from '../../contexts/Autenticacao/AutenticacaoContext.jsx';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../styles/defaultThemes'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup';
 import { InputError } from '../InputError/InputError.jsx';
@@ -18,13 +18,12 @@ export const BoxLogin = () => {
     const validationSchema = yup.object({
         email: yup.string().email().required(),
         senha: yup.string().min(8).required()
-    })
+    });
 
     const {register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(validationSchema)});
 
-    const redireciona = useNavigate();
-    // eslint-disable-next-line no-unused-vars
-    const timeOutRed = setTimeout(redireciona('/'), 5100)
+    // const redireciona = useNavigate();
+    // const timeOutRed = setTimeout(redireciona('/'), 5100)
 
     const onSubmit = (dados) => {
         console.log(dados.email, dados.senha)
@@ -37,7 +36,7 @@ export const BoxLogin = () => {
             <main>
                 <BoxLoginStyled>
                     <AcessarStyled>Acessar</AcessarStyled>
-                    {String(authenticated)}
+                    {/* {String(authenticated)} */}
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <DivStyled>
                             <PESStyled>E-mail</PESStyled>
