@@ -106,6 +106,11 @@ export const buscarListaDispositivos = () => {
         .then((response) => response.data);
 };
 
+export const buscarListaLocais = () => {
+    return axios.get("http://localhost:3030/locals", buildAxiosConfig())
+        .then((response) => response.data)
+}
+
 export const buscarUsuario = () => {
     return axios.get("http://localhost:3030/usuario", buildAxiosConfig());
 };

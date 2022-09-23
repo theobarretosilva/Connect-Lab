@@ -4,7 +4,7 @@ import { GlobalStyle } from "../../styles/globalStyle"
 import { BoxModalStyled, BtnAddStyled, BtnCancelarStyled, DivBtnsStyled, DivSelectStyled, FundoTotalModalStyled, LabelModalStyled, SelectModalStyled, TituloModalStyled } from "./ModalAddDisp.style"
 import PropTypes from "prop-types"
 
-export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
+export const ModalAddDisp = ({ nomeDispositivo, closeModal, nomeLocal, idLocal }) => {
     return(
         <ThemeProvider theme={myTheme}>
             <GlobalStyle />
@@ -15,8 +15,7 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
                         <LabelModalStyled>Local *</LabelModalStyled>
                         <SelectModalStyled required>
                             <option selected disabled value="">Selecione o local</option>
-                            <option value="casa">Casa</option>
-                            <option value="escritorio">Escritório</option>
+                            <option value={idLocal}>{nomeLocal}</option>
                         </SelectModalStyled>
                     </DivSelectStyled>
                     <DivSelectStyled>
@@ -44,4 +43,6 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
 ModalAddDisp.propTypes = {
     nomeDispositivo: PropTypes.string.isRequired,
     closeModal: PropTypes.func.isRequired,
+    nomeLocal: PropTypes.string.isRequired,
+    idLocal: PropTypes.string.isRequired,
 };
