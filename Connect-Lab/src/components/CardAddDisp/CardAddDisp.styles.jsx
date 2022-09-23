@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const GroupDispAddStyled = styled.section`
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    gap: 56px;
+    grid-template-columns: repeat(3, 1fr);
     flex-direction: row;
     flex-wrap: wrap;
-    flex: 3;
     width: 1200px;
     margin-left: 6%;
-    padding-right: 0.5%;
+    margin-top: 3%;
+    margin-bottom: 4%;
 `
 
 export const CardStyled = styled.section`
@@ -18,7 +18,7 @@ export const CardStyled = styled.section`
     box-shadow: 0px 5px 4px ${({ theme }) => theme.sombras.primaria};
     border-radius: 20px;
     text-align: center;
-    margin-top: 2%;
+    margin-right: 0px;
 `
 
 export const ImgDispStyled = styled.img`
@@ -32,6 +32,8 @@ export const TipoDispStyled = styled.p`
     font-size: 20px;
     color: ${({ theme }) => theme.colors.octonaria};
     margin-top: 2%;
+    margin-left: 10px;
+    margin-right: 10px;
 `
 
 export const BtnAddStyled = styled.button`

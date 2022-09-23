@@ -18,7 +18,7 @@ export const PTempStyled = styled.p`
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
     font-size: 39px;
-    padding-top: 1.5%;
+    padding-top: 20px;
     margin-bottom: 0;
 `
 
@@ -27,13 +27,15 @@ export const PLocalStyled = styled.p`
     font-weight: 400;
     font-size: 25px;
     color: ${({ theme }) => theme.colors.terciaria};
-    margin-top: 2%;
-    margin-bottom: 0;
+    margin-top: 1%;
+    margin-bottom: 1%;
 `
 
 export const InfoTempoStyled = styled.div`
     display: flex;
     justify-content: center;
+    margin-top: 1%;
+    padding-bottom: 20px;
 `
 
 export const PSenPreChaStyled = styled.p`

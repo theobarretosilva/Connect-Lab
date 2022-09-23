@@ -111,6 +111,19 @@ export const buscarListaLocais = () => {
         .then((response) => response.data)
 }
 
+export const addDispUsu = (idUser, idDevice, idLocal, comodo) => {
+    const dadosDispUsu = {
+        "user": idUser,
+        "device": idDevice,
+        "is_on": true,
+        "local": idLocal,
+        "room": comodo
+    }
+
+    axios.post("http://localhost:3030/userDevices", dadosDispUsu, buildAxiosConfig())
+        .then((response) => console.log(response))
+}
+
 export const buscarUsuario = () => {
     return axios.get("http://localhost:3030/usuario", buildAxiosConfig());
 };
