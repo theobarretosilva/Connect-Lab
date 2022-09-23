@@ -11,8 +11,10 @@ export const FiltroDispositivos = () => {
             <FiltroStyled>
                 <PFiltroSelecionado>Todos</PFiltroSelecionado>
                 <PFiltro>Quarto</PFiltro>
-                <PFiltro>Sala</PFiltro>
                 <PFiltro>Cozinha</PFiltro>
+                <PFiltro>Sala de estar</PFiltro>
+                <PFiltro>Sala de jantar</PFiltro>
+                <PFiltro>Área de serviço</PFiltro>
             </FiltroStyled>
         </ThemeProvider>
     )

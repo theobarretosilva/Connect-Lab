@@ -4,7 +4,7 @@ import { GroupDispAddStyled } from "../components/CardAddDisp/CardAddDisp.styles
 import { HeaderbarDisp } from "../components/HeaderbarDisp/HeaderbarDisp";
 import { SearchBarDisp } from "../components/SearchBarDisp/SearchBarDisp";
 import { TituloTelaDisp } from "../components/TituloTelaDisp/TituloTelaDisp";
-import { buscarListaDispositivos } from "../service/api/axios"
+import { buscarListaDispositivos, buscarListaLocais } from "../service/api/axios"
 import { ModalAddDisp } from "../components/ModalAddDisp/ModalAddDisp"
 
 export const TelaDispositivos = () => {
@@ -36,6 +36,19 @@ export const TelaDispositivos = () => {
 
     const dadosDispositivo = JSON.parse(localStorage.getItem("dadosDispSelected"));
 
+    const carregaLocais = () => {
+        buscarListaLocais()
+        .then((value) => {
+            localStorage.setItem("locaisAddDisp", JSON.stringify(value))
+            value.map((valor)=> console.log(valor.description))
+        })
+    }
+
+    const noClick = () => {
+        achaDisp();
+        carregaLocais();
+    }
+
     return(
         <>
             <HeaderbarDisp />
@@ -48,7 +61,7 @@ export const TelaDispositivos = () => {
                         linkFotoDispositivo={value.photoUrl}
                         nomeDisposivito={value.name}
                         idDispositivo={value._id}
-                        noClique={achaDisp}
+                        noClique={noClick}
                     />
                 ))}
             </GroupDispAddStyled>

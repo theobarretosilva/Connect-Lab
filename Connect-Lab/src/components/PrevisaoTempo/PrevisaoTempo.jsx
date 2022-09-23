@@ -36,11 +36,9 @@ export const PrevisaoTempo = () => {
                 {weather ? (<PTempStyled>{weather.main.temp}°C</PTempStyled>) : (<PTempStyled>Calma</PTempStyled>)}
                 {weather ? (<PLocalStyled>{weather.name}</PLocalStyled>) : (<PLocalStyled>Calma</PLocalStyled>)}
                 <InfoTempoStyled>
-                    {weather ? (<PSenPreChaStyled>Sensação térmica: {weather.main.feels_like}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
+                    {weather ? (<PSenPreChaStyled>Temperatura mínima: {weather.main.temp_min}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
                     <p><b>-</b></p>
-                    {weather ? (<PSenPreChaStyled>Umidade: {weather.main.humidity}%</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
-                    <p><b>-</b></p>
-                    {weather ? (<PSenPreChaStyled>Velocidade do vento: {weather.wind.speed} km/h</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
+                    {weather ? (<PSenPreChaStyled>Temperatura máxima: {weather.main.temp_max}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
                 </InfoTempoStyled>
             </SectionTempoStyled>        
         </ThemeProvider>

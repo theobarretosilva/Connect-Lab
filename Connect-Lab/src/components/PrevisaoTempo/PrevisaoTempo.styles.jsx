@@ -34,8 +34,7 @@ export const PLocalStyled = styled.p`
 export const InfoTempoStyled = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 1%;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 `
 
 export const PSenPreChaStyled = styled.p`
