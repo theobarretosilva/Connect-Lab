@@ -19,8 +19,9 @@ export const BoxModalStyled = styled.section`
     box-shadow: 0px 8px 4px ${({ theme }) => theme.sombras.primaria};
     border-radius: 30px;
     text-align: center;
-    margin-top: 6%;
-    width: 40%;
+    margin-top: 1%;
+    width: 550px;
+    height: 400px;
     margin-left: 30%;
     display: flex;
     flex-direction: column;

@@ -16,6 +16,10 @@ export const BoxPerfil = () => {
     const bairroUsu = " - " + dadosLS.user.userAddress.neighborhood;
     const cidadeUsu = dadosLS.user.userAddress.city;
     const estadoUsu = dadosLS.user.userAddress.state;
+    
+    const limpaLS = () => {
+        localStorage.clear();
+    }
 
     return(
         <ThemeProvider theme={myTheme}>
@@ -37,7 +41,7 @@ export const BoxPerfil = () => {
                     <EnderecoStyled>{cidadeUsu} - {estadoUsu}</EnderecoStyled>
                 </DivEnderecoStyled>
                 <Link to="/editarDadosUsu"><BtnAteraDadosStyled>Alterar meus dados</BtnAteraDadosStyled></Link>
-                <SairStyled>Sair</SairStyled>
+                <Link to="/login"><SairStyled onClick={limpaLS}>Sair</SairStyled></Link>
             </MainPerfilStyled>
         </ThemeProvider>
         

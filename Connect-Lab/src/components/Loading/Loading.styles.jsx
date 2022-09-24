@@ -7,3 +7,7 @@ export const DivLoadingStyled = styled.div`
     justify-content: center;
     align-items: center;
 `
+
+export const ImgLoadingStyled = styled.img`
+    width: 130px;
+`

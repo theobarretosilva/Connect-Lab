@@ -27,6 +27,6 @@ CardDispositivo.propTypes = {
     descriImg: PropTypes.string,
     nomeDisp: PropTypes.string.isRequired,
     localDisp: PropTypes.string.isRequired,
-    POnOff: PropTypes.string.isRequired,
+    POnOff: PropTypes.bool.isRequired,
     BtnOnOff: PropTypes.node.isRequired,
 };

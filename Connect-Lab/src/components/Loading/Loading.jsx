@@ -1,9 +1,9 @@
-import { DivLoadingStyled } from "./LOading.styles"
+import { DivLoadingStyled, ImgLoadingStyled } from "./Loading.styles"
 
 export const Loading = () => {
     return(
         <DivLoadingStyled>
-            <img src="../../assets/imgs/loading.gif" alt="Loading"/>
+            <ImgLoadingStyled src="../../src/assets/imgs/loading.svg" alt="Loading"/>
         </DivLoadingStyled>
     )
 }

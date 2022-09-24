@@ -8,8 +8,7 @@ import { buscarDispUsu, buscarListaDispositivos, buscarListaLocais } from "../se
 import { ModalAddDisp } from "../components/ModalAddDisp/ModalAddDisp"
 
 export const TelaDispositivos = () => {
-    const json = JSON.parse(localStorage.getItem("dispositivosSistema"));
-    const [filteredData, setFilteredData] = useState(json);
+    
     const [openModal, setOpenModal] = useState(false)
 
     const achaDisp = (event) => {
@@ -25,6 +24,8 @@ export const TelaDispositivos = () => {
         const dispositivos = response;
         localStorage.setItem("dispositivosSistema", JSON.stringify(dispositivos))
     })
+    const json = JSON.parse(localStorage.getItem("dispositivosSistema"));
+    const [filteredData, setFilteredData] = useState(json);
 
     function handleFilter(event){
         const searchWord = event.target.value;

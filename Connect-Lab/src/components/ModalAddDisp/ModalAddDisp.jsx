@@ -31,6 +31,7 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
         addDispUsu(idUsuario, idDispSelecionado, dados.local, dados.comodo)
             .then((value) => {
                 console.log(value)
+                setRemoveLoading(false)
             })
     }
 
@@ -40,35 +41,36 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
             <GlobalStyle />
             <FundoTotalModalStyled>
                 <BoxModalStyled>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <TituloModalStyled>{nomeDispositivo}</TituloModalStyled>
-                        <DivSelectStyled>
-                            <LabelModalStyled>Local *</LabelModalStyled>
-                            {errors?.email?.type && <InputError type={errors.email.type} field="local" />}
-                            <SelectModalStyled {...register("local")}>
-                                <option selected disabled value="selecioneLocal">Selecione o local</option>
-                                {locaisDisp.map((value, key)=> {
-                                    return <option value={value._id} key={key}>{value.description}</option>
-                                })}
-                            </SelectModalStyled>
-                        </DivSelectStyled>
-                        <DivSelectStyled>
-                            <LabelModalStyled>Cômodo *</LabelModalStyled>
-                            <SelectModalStyled {...register("comodo")}>
-                                <option selected disabled value="">Selecione o cômodo</option>
-                                <option value="quarto">Quarto</option>
-                                <option value="cozinha">Cozinha</option>
-                                <option value="salaDeEstar">Sala de estar</option>
-                                <option value="salaDeJantar">Sala de jantar</option>
-                                <option value="areaDeServico">Área de serviço</option>
-                            </SelectModalStyled>
-                        </DivSelectStyled>
-                        <DivBtnsStyled>
-                            <BtnCancelarStyled onClick={()=> closeModal(false)}>Cancelar</BtnCancelarStyled>
-                            <BtnAddStyled>Adicionar</BtnAddStyled>
-                        </DivBtnsStyled>
-                    </form>
-                    
+                    {removeLoading ? (
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <TituloModalStyled>{nomeDispositivo}</TituloModalStyled>
+                            <DivSelectStyled>
+                                <LabelModalStyled>Local *</LabelModalStyled>
+                                {errors?.email?.type && <InputError type={errors.email.type} field="local" />}
+                                <SelectModalStyled {...register("local")}>
+                                    <option selected disabled value="selecioneLocal">Selecione o local</option>
+                                    {locaisDisp.map((value, key)=> {
+                                        return <option value={value._id} key={key}>{value.description}</option>
+                                    })}
+                                </SelectModalStyled>
+                            </DivSelectStyled>
+                            <DivSelectStyled>
+                                <LabelModalStyled>Cômodo *</LabelModalStyled>
+                                <SelectModalStyled {...register("comodo")}>
+                                    <option selected disabled value="">Selecione o cômodo</option>
+                                    <option value="Quarto">Quarto</option>
+                                    <option value="Cozinha">Cozinha</option>
+                                    <option value="SalaDeEstar">Sala de estar</option>
+                                    <option value="SalaDeJantar">Sala de jantar</option>
+                                    <option value="ÁreaDeServiço">Área de serviço</option>
+                                </SelectModalStyled>
+                            </DivSelectStyled>
+                            <DivBtnsStyled>
+                                <BtnCancelarStyled onClick={()=> closeModal(false)}>Cancelar</BtnCancelarStyled>
+                                <BtnAddStyled>Adicionar</BtnAddStyled>
+                            </DivBtnsStyled>
+                        </form>
+                    ) : (<Loading />)}
                 </BoxModalStyled>
             </FundoTotalModalStyled>
         </ThemeProvider>
