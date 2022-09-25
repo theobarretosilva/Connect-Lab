@@ -32,7 +32,5 @@ O website conta com as seguintes funções:
 ## 🛠 Tecnologias utilizadas
 
 <div style="display: inline_block"; align= "center"; ><br>
-  <img align="center" alt="Théo-HTML" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg">
-  <img align="center" alt="Théo-CSS" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg">
-  <img align="center" alt="Théo-JavaScript" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg">
+  <img align="center" alt="Théo-React" height="65" width="75" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
 </div>
