@@ -51,7 +51,6 @@ export const BtnCadastrese = styled.button`
     border: none;
     margin-left: 24.8%;
     margin-top: 2%;
-    margin-bottom: 4%;
     cursor: pointer;
 `
 

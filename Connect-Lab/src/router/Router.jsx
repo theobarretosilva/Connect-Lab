@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { TelaLogin, TelaDispositivos, TelaPerfil, TelaCadastro, TelaNotFound, TelaDetalhesDisp, TelaInicio } from '../pages';
 import { TelaEditDadosUsu } from "../pages/TelaEditDadosUsu";
-import { PrivateRoute } from "./PrivateRoute";
 
 export const Router = () => {
     return(
@@ -13,8 +12,7 @@ export const Router = () => {
             <Route exact path="/perfil" element={<TelaPerfil />} />
             <Route exact path="/editarDadosUsu" element={<TelaEditDadosUsu />} />
             <Route exact path="/detalhesDisp" element={<TelaDetalhesDisp />} />
-            <Route path="/" element={<PrivateRoute> <TelaInicio /> </PrivateRoute>} />
-            {/* <PrivateRoute path="/" component={<TelaInicio />} /> */}
+            <Route exact path="/" element={<TelaInicio />} />
         </Routes>
     );
 };

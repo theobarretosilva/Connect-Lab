@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { CardDispositivo } from "../components/CardDispositivo/CardDispositivo";
 import { BtnOffStyled, BtnOnStyled, ImgOnOffStyled, SectionDispositivosStyled } from "../components/CardDispositivo/CardDispositivo.styles";
@@ -11,9 +11,7 @@ import { GlobalStyle } from "../styles/globalStyle";
 
 export const TelaInicio = () => {
 
-    useEffect(()=> {
         buscarDispUsu();
-    }, [])
 
     const dispositivosDoUsuario = JSON.parse(localStorage.getItem("dispositivosDoUsuario"));
     

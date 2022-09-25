@@ -31,13 +31,13 @@ export const BtnLogin = styled.button`
     background-color: ${({ theme }) => theme.colors.quaternaria};
     box-shadow: 0px 5px 5px ${({ theme }) => theme.sombras.primaria};
     border-radius: 10px;
-    width: 9%;
+    width: 16%;
     padding: 10px;
     margin: 2%;
     margin-right: 3%;
     border: none;
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     color: ${({ theme }) => theme.colors.primaria};
     font-size: 18px;
     cursor: pointer;
@@ -45,7 +45,7 @@ export const BtnLogin = styled.button`
 
 export const PBtnStyled = styled.p`
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     color: ${({ theme }) => theme.colors.primaria};
     font-size: 18px;
     margin: 0;

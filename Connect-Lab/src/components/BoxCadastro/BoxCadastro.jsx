@@ -1,4 +1,4 @@
-import { PESStyled } from "../BoxLogin/BoxLogin.styles";
+import { PCadastreseStyled, PESStyled } from "../BoxLogin/BoxLogin.styles";
 import { BoxCadastroStyled, BtnCadastrese, CadastreseStyled, DivBaseStyled, DivInputStyled, InputCadastroStyled } from "./BoxCadastro.styles";
 import { useForm } from "react-hook-form";
 import { post } from "../../service/api/axios";
@@ -6,6 +6,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { InputError } from "../InputError/InputError";
 import { cep } from "../../utils/validations";
+import { Link } from "react-router-dom";
 
 export const BoxCadastro = () => {
 
@@ -203,6 +204,7 @@ export const BoxCadastro = () => {
                     </DivBaseStyled>
                     <BtnCadastrese>Cadastre-se</BtnCadastrese>
                 </form>
+                <Link to={"/login"}><PCadastreseStyled>Já tem uma conta? Faça login!</PCadastreseStyled></Link>
             </BoxCadastroStyled>
         </main>
     );

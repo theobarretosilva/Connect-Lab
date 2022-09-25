@@ -59,7 +59,7 @@ export const BtnLogin = styled.button`
     height: 43px;
     border: none;
     margin-left: 11%;
-    margin-top: 6%;
+    margin-top: 4%;
     cursor: pointer;
 `
 
@@ -69,7 +69,8 @@ export const PCadastreseStyled = styled.p`
     text-decoration: underline;
     color: ${({ theme }) => theme.colors.secundaria};
     margin-bottom: 15%;
-    margin-top: 18%;
+    margin-top: 20px;
+    padding-bottom: 2%;
     text-align: center;
     cursor: pointer;
 `
