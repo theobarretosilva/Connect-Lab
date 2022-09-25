@@ -4,11 +4,15 @@ import { GroupDispAddStyled } from "../components/CardAddDisp/CardAddDisp.styles
 import { HeaderbarDisp } from "../components/HeaderbarDisp/HeaderbarDisp";
 import { SearchBarDisp } from "../components/SearchBarDisp/SearchBarDisp";
 import { TituloTelaDisp } from "../components/TituloTelaDisp/TituloTelaDisp";
-import { buscarListaDispositivos, buscarListaLocais } from "../service/api/axios"
+import { buscarDispUsu, buscarListaDispositivos, buscarListaLocais } from "../service/api/axios"
 import { ModalAddDisp } from "../components/ModalAddDisp/ModalAddDisp"
 
 export const TelaDispositivos = () => {
+    useEffect(()=> {
+        buscarDispUsu();
+    }, [])
     
+    const json = JSON.parse(localStorage.getItem("dispositivosSistema"));
     const [openModal, setOpenModal] = useState(false)
 
     const achaDisp = (event) => {
@@ -24,7 +28,6 @@ export const TelaDispositivos = () => {
         const dispositivos = response;
         localStorage.setItem("dispositivosSistema", JSON.stringify(dispositivos))
     })
-    const json = JSON.parse(localStorage.getItem("dispositivosSistema"));
     const [filteredData, setFilteredData] = useState(json);
 
     function handleFilter(event){

@@ -32,7 +32,6 @@ export const ImgDetalhesStyled = styled.img`
 `
 
 export const DivOnOffStyled = styled.div`
-    text-align: center;
     display: flex;
     justify-content: space-around;
     width: 70%;

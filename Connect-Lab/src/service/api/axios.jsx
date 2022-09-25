@@ -154,15 +154,15 @@ export const buscarDispUsu = () => {
             console.log(response.data)
             localStorage.setItem("dispositivosDoUsuario", JSON.stringify(response.data))
         })
-        .catch((error) => console.log(error))
-}
+        .catch((error) => console.log(error));
+};
 
-export const deletDispUsu = () => {
-    const idUsu = JSON.parse(localStorage.getItem("idUsuario"));
+export const deletDispUsu = (idDisp) => {
 
-    return axios.delete(`http://localhost:3030/userDevices/${idUsu}`, buildAxiosConfig())
+    return axios.delete(`http://localhost:3030/userDevices/${idDisp}`, buildAxiosConfig())
         .then((response)=> console.log(response))
-}
+        .catch((error)=> console.log(error));
+};
 
 export const buscarUsuario = () => {
     return axios.get("http://localhost:3030/usuario", buildAxiosConfig());
