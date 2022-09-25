@@ -28,3 +28,11 @@ O website conta com as seguintes funções:
   <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20edicao%20de%20dados%20do%20usu.png" width="450"/>
   <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Modal%20add%20disp.png" width="450"/>
 </div>
+
+## 🛠 Tecnologias utilizadas
+
+<div style="display: inline_block"; align= "center"; ><br>
+  <img align="center" alt="Théo-HTML" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg">
+  <img align="center" alt="Théo-CSS" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg">
+  <img align="center" alt="Théo-JavaScript" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg">
+</div>
