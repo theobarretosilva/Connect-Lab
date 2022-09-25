@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import { ThemeProvider } from "styled-components";
-import { myTheme } from "../../styles/defaultThemes";
-import { SectionTempoStyled, InfoTempoStyled, PTempStyled, PLocalStyled, PSenPreChaStyled } from './PrevisaoTempo.styles'
-import { GlobalStyle } from "../../styles/globalStyle";
+import { SectionTempoStyled, InfoTempoStyled, PTempStyled, PLocalStyled, PSenPreChaStyled } from './PrevisaoTempo.styles';
 
 export const PrevisaoTempo = () => {
 
@@ -27,21 +24,17 @@ export const PrevisaoTempo = () => {
 
     useEffect(() => {
         searchVai();
-    }, [])
+    })
 
     return(
-        <ThemeProvider theme={myTheme}>
-            <GlobalStyle />
-            <SectionTempoStyled>
-                {weather ? (<PTempStyled>{weather.main.temp}°C</PTempStyled>) : (<PTempStyled>Calma</PTempStyled>)}
-                {weather ? (<PLocalStyled>{weather.name}</PLocalStyled>) : (<PLocalStyled>Calma</PLocalStyled>)}
-                <InfoTempoStyled>
-                    {weather ? (<PSenPreChaStyled>Temperatura mínima: {weather.main.temp_min}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
-                    <p><b>-</b></p>
-                    {weather ? (<PSenPreChaStyled>Temperatura máxima: {weather.main.temp_max}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
-                </InfoTempoStyled>
-            </SectionTempoStyled>        
-        </ThemeProvider>
-        
-    )
-}
+        <SectionTempoStyled>
+            {weather ? (<PTempStyled>{weather.main.temp}°C</PTempStyled>) : (<PTempStyled>Calma</PTempStyled>)}
+            {weather ? (<PLocalStyled>{weather.name}</PLocalStyled>) : (<PLocalStyled>Calma</PLocalStyled>)}
+            <InfoTempoStyled>
+                {weather ? (<PSenPreChaStyled>Temperatura mínima: {weather.main.temp_min}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
+                <p><b>-</b></p>
+                {weather ? (<PSenPreChaStyled>Temperatura máxima: {weather.main.temp_max}°C</PSenPreChaStyled>) : (<PSenPreChaStyled>Calma</PSenPreChaStyled>)}
+            </InfoTempoStyled>
+        </SectionTempoStyled>        
+    );
+};

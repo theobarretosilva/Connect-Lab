@@ -1,27 +1,20 @@
 import { DivDispositivoStyled, ImgProdutoStyled, PNomeDispStyled, DivLocOnOffStyled, PLocOnOffStyled, DivStyled, DetalhesStyled } from "./CardDispositivo.styles";
 import PropTypes from 'prop-types';
-import { ThemeProvider } from "styled-components";
-import { myTheme } from "../../styles/defaultThemes";
-import { GlobalStyle } from "../../styles/globalStyle";
 import { Link } from "react-router-dom";
 
 export const CardDispositivo = ({ img, descriImg, nomeDisp, localDisp, POnOff, BtnOnOff, clickDetails, idDisp }) => {
     return(
-        <ThemeProvider theme={myTheme}>
-            <GlobalStyle />
-                <DivDispositivoStyled>
-                    <DivStyled>
-                        <ImgProdutoStyled src={img} alt={descriImg}/>
-                        <DivLocOnOffStyled>
-                            <PNomeDispStyled>{nomeDisp}</PNomeDispStyled>
-                            <PLocOnOffStyled>{localDisp} | {POnOff}</PLocOnOffStyled>
-                        </DivLocOnOffStyled>
-                        {BtnOnOff}
-                    </DivStyled>
-                    <Link to="/detalhesDisp"><DetalhesStyled value={idDisp} onClick={clickDetails}>Mais detalhes</DetalhesStyled></Link>
-                </DivDispositivoStyled>
-        </ThemeProvider>
-        
+        <DivDispositivoStyled>
+            <DivStyled>
+                <ImgProdutoStyled src={img} alt={descriImg}/>
+                <DivLocOnOffStyled>
+                    <PNomeDispStyled>{nomeDisp}</PNomeDispStyled>
+                    <PLocOnOffStyled>{localDisp} | {POnOff}</PLocOnOffStyled>
+                </DivLocOnOffStyled>
+                {BtnOnOff}
+            </DivStyled>
+            <Link to="/detalhesDisp"><DetalhesStyled value={idDisp} onClick={clickDetails}>Mais detalhes</DetalhesStyled></Link>
+        </DivDispositivoStyled>        
     );
 };
 

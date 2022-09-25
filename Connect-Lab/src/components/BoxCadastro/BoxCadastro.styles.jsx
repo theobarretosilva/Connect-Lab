@@ -4,7 +4,8 @@ export const BoxCadastroStyled = styled.section`
     background: ${({ theme }) => theme.colors.primaria};
     box-shadow: 4px 4px 15px 1px ${({ theme }) => theme.sombras.primaria};
     border-radius: 15px;
-    margin-top: 40px;
+    margin-top: 3%;
+    margin-bottom: 2%;
     width: 60%;
     margin-left: 19.4%;
 `
@@ -15,12 +16,13 @@ export const CadastreseStyled = styled.h2`
     color: ${({ theme }) => theme.colors.terciaria};
     padding-top: 20px;
     text-align: center;
+    margin-bottom: 2%;
 `
 
 export const DivBaseStyled = styled.div`
     display: flex;
     justify-content: space-around;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 `
 
 export const DivInputStyled = styled.div`
@@ -48,7 +50,8 @@ export const BtnCadastrese = styled.button`
     height: 40px;
     border: none;
     margin-left: 24.8%;
-    margin-top: 3%;
+    margin-top: 2%;
+    margin-bottom: 4%;
     cursor: pointer;
 `
 

@@ -1,7 +1,4 @@
-import { ThemeProvider } from "styled-components"
 import { BtnAteraDadosStyled, CepStyled, DadosUsuStyled, Div1Styled, DivEnderecoStyled, DivNomeDadosSyled, EnderecoStyled, H1Styled, ImgRedondaStyled, LinhaStyled, MainPerfilStyled, NomeUsuStyled, PEnderecoStyled, SairStyled } from "./BoxPerfil.styles"
-import { myTheme } from "../../styles/defaultThemes"
-import { GlobalStyle } from "../../styles/globalStyle";
 import { Link } from "react-router-dom";
 
 export const BoxPerfil = () => {
@@ -22,28 +19,24 @@ export const BoxPerfil = () => {
     }
 
     return(
-        <ThemeProvider theme={myTheme}>
-            <GlobalStyle />
-            <MainPerfilStyled>
-                <H1Styled>Meu perfil</H1Styled>
-                <Div1Styled>
-                    {dadosLS ? (<ImgRedondaStyled src={linkFotoUsu} alt="Foto escolhida pelo usuário"/>) : (<ImgRedondaStyled src="../src/assets/imgs/userGenerico.png" alt="Foto genérica"/>)}
-                    <DivNomeDadosSyled>
-                        <NomeUsuStyled>{nomeUsu}</NomeUsuStyled>
-                        <DadosUsuStyled>{emailUsu}{foneUsu}</DadosUsuStyled>
-                    </DivNomeDadosSyled>
-                </Div1Styled>
-                <DivEnderecoStyled>
-                    <PEnderecoStyled>Endereço</PEnderecoStyled>
-                    <LinhaStyled />
-                    <CepStyled>{cepUsu}</CepStyled>
-                    <EnderecoStyled>{ruaUsu}{complementoUsu}{bairroUsu}</EnderecoStyled>
-                    <EnderecoStyled>{cidadeUsu} - {estadoUsu}</EnderecoStyled>
-                </DivEnderecoStyled>
-                <Link to="/editarDadosUsu"><BtnAteraDadosStyled>Alterar meus dados</BtnAteraDadosStyled></Link>
-                <Link to="/login"><SairStyled onClick={limpaLS}>Sair</SairStyled></Link>
-            </MainPerfilStyled>
-        </ThemeProvider>
-        
-    )
-}
+        <MainPerfilStyled>
+            <H1Styled>Meu perfil</H1Styled>
+            <Div1Styled>
+                {dadosLS ? (<ImgRedondaStyled src={linkFotoUsu} alt="Foto escolhida pelo usuário"/>) : (<ImgRedondaStyled src="../src/assets/imgs/userGenerico.png" alt="Foto genérica"/>)}
+                <DivNomeDadosSyled>
+                    <NomeUsuStyled>{nomeUsu}</NomeUsuStyled>
+                    <DadosUsuStyled>{emailUsu}{foneUsu}</DadosUsuStyled>
+                </DivNomeDadosSyled>
+            </Div1Styled>
+            <DivEnderecoStyled>
+                <PEnderecoStyled>Endereço</PEnderecoStyled>
+                <LinhaStyled />
+                <CepStyled>{cepUsu}</CepStyled>
+                <EnderecoStyled>{ruaUsu}{complementoUsu}{bairroUsu}</EnderecoStyled>
+                <EnderecoStyled>{cidadeUsu} - {estadoUsu}</EnderecoStyled>
+            </DivEnderecoStyled>
+            <Link to="/editarDadosUsu"><BtnAteraDadosStyled>Alterar meus dados</BtnAteraDadosStyled></Link>
+            <Link to="/login"><SairStyled onClick={limpaLS}>Sair</SairStyled></Link>
+        </MainPerfilStyled>        
+    );
+};

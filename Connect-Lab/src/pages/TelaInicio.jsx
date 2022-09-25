@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { ThemeProvider } from "styled-components";
 import { CardDispositivo } from "../components/CardDispositivo/CardDispositivo";
 import { BtnOffStyled, BtnOnStyled, ImgOnOffStyled, SectionDispositivosStyled } from "../components/CardDispositivo/CardDispositivo.styles";
 import { FiltroDispositivos } from "../components/FiltrosDispositivos/FiltrosDispositivos";
 import { HeaderbarInicio } from "../components/HeaderbarInicio/HeaderbarInicio";
 import { PrevisaoTempo } from "../components/PrevisaoTempo/PrevisaoTempo"
 import { buscarDispUsu } from "../service/api/axios";
+import { myTheme } from "../styles/defaultThemes";
+import { GlobalStyle } from "../styles/globalStyle";
 
 export const TelaInicio = () => {
 
@@ -38,7 +41,8 @@ export const TelaInicio = () => {
     }
 
     return(
-        <>
+        <ThemeProvider theme={myTheme}>
+            <GlobalStyle />
             <HeaderbarInicio />
             <PrevisaoTempo />
             <FiltroDispositivos funcao={handleFilter} />
@@ -60,8 +64,8 @@ export const TelaInicio = () => {
                     />
                 ))}
             </SectionDispositivosStyled>
-        </>
-    )
-}
+        </ThemeProvider>
+    );
+};
 
 export default TelaInicio;

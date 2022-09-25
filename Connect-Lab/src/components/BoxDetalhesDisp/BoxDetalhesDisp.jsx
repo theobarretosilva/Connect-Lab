@@ -1,10 +1,8 @@
-import { ThemeProvider } from "styled-components";
-import { myTheme } from "../../styles/defaultThemes";
-import { GlobalStyle } from "../../styles/globalStyle";
 import { BtnRemoveDispStyled, DivDadosInfoStyled, DivInfoStyled, DivOnOffStyled, H3InfoStyled, ImgDetalhesStyled, LinhaStyled, PInfoStyled, TipoDispStyled, SectionDetalheStyled, PStyled } from "./BoxDetalhesDisp.styles"
 import { H1Styled } from "../BoxPerfil/BoxPerfil.styles";
 import { BtnOffStyled, BtnOnStyled, ImgOnOffStyled } from "../CardDispositivo/CardDispositivo.styles";
 import { deletDispUsu } from "../../service/api/axios";
+import { Link } from "react-router-dom";
 
 export const BoxDetalhesDisp = () => {
     const disp = JSON.parse(localStorage.getItem("dispositivosDoUsuario"));
@@ -18,33 +16,30 @@ export const BoxDetalhesDisp = () => {
     }
 
     return(
-        <ThemeProvider theme={myTheme}>
-            <GlobalStyle />
-            <main>
-                {dados.map((value, key)=> (
-                    <SectionDetalheStyled key={key}>
-                        <H1Styled>{value.device.name}</H1Styled>
-                        <TipoDispStyled>{value.device.type}</TipoDispStyled>
-                        <ImgDetalhesStyled src={value.device.photoUrl} alt={value.device.name}/>
-                        <DivOnOffStyled>
-                            <PStyled>Dispositivo {value.is_on ? ("ligado") : ("desligado")}</PStyled>
-                            {value.is_on ? (<BtnOnStyled><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>) : (<BtnOffStyled><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)}
-                        </DivOnOffStyled>
-                        <DivInfoStyled>
-                            <H3InfoStyled>Informações do dispositivo</H3InfoStyled>
-                            <LinhaStyled />
-                            <DivDadosInfoStyled>
-                                <PInfoStyled><b>Fabricante: </b>{value.device.madeBy}</PInfoStyled>
-                                <PInfoStyled><b>ID virtual: </b>{value.device.info.virtual_id}</PInfoStyled>
-                                <PInfoStyled><b>Endereço IP: </b>{value.device.info.ip_address}</PInfoStyled>
-                                <PInfoStyled><b>Endereço MAC: </b>{value.device.info.mac_address}</PInfoStyled>
-                                <PInfoStyled><b>Força do sinal: </b>{value.device.info.signal}</PInfoStyled>
-                            </DivDadosInfoStyled>
-                        </DivInfoStyled>
-                        <BtnRemoveDispStyled onClick={deletaDisp} value={value._id}>Remover dispositivo</BtnRemoveDispStyled>
-                    </SectionDetalheStyled>
-                ))};
-            </main>
-        </ThemeProvider>
+        <main>
+            {dados.map((value, key)=> (
+                <SectionDetalheStyled key={key}>
+                    <H1Styled>{value.device.name}</H1Styled>
+                    <TipoDispStyled>{value.device.type}</TipoDispStyled>
+                    <ImgDetalhesStyled src={value.device.photoUrl} alt={value.device.name}/>
+                    <DivOnOffStyled>
+                        <PStyled>Dispositivo {value.is_on ? ("ligado") : ("desligado")}</PStyled>
+                        {value.is_on ? (<BtnOnStyled><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>) : (<BtnOffStyled><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)}
+                    </DivOnOffStyled>
+                    <DivInfoStyled>
+                        <H3InfoStyled>Informações do dispositivo</H3InfoStyled>
+                        <LinhaStyled />
+                        <DivDadosInfoStyled>
+                            <PInfoStyled><b>Fabricante: </b>{value.device.madeBy}</PInfoStyled>
+                            <PInfoStyled><b>ID virtual: </b>{value.device.info.virtual_id}</PInfoStyled>
+                            <PInfoStyled><b>Endereço IP: </b>{value.device.info.ip_address}</PInfoStyled>
+                            <PInfoStyled><b>Endereço MAC: </b>{value.device.info.mac_address}</PInfoStyled>
+                            <PInfoStyled><b>Força do sinal: </b>{value.device.info.signal}</PInfoStyled>
+                        </DivDadosInfoStyled>
+                    </DivInfoStyled>
+                    <Link to="/" replace={true}><BtnRemoveDispStyled onClick={deletaDisp} value={value._id}>Remover dispositivo</BtnRemoveDispStyled></Link>
+                </SectionDetalheStyled>
+            ))};
+        </main>
     );
 };

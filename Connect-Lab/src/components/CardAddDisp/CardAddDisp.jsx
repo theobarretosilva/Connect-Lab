@@ -1,22 +1,16 @@
-import { ThemeProvider } from "styled-components"
-import { myTheme } from "../../styles/defaultThemes"
-import { GlobalStyle } from "../../styles/globalStyle"
 import { BtnAddStyled, CardStyled, ImgDispStyled, TipoDispStyled } from "./CardAddDisp.styles"
 import PropTypes from 'prop-types';
 
 export const CardAddDisp = ({ linkFotoDispositivo, nomeDisposivito, idDispositivo, noClique }) => {
 
     return(
-        <ThemeProvider theme={myTheme}>
-            <GlobalStyle />
-            <CardStyled>
-                <ImgDispStyled src={linkFotoDispositivo}/>
-                <TipoDispStyled>{nomeDisposivito}</TipoDispStyled>
-                <BtnAddStyled onClick={noClique} value={idDispositivo}>Adicionar</BtnAddStyled>
-            </CardStyled>
-        </ThemeProvider>
-    )
-}
+        <CardStyled>
+            <ImgDispStyled src={linkFotoDispositivo}/>
+            <TipoDispStyled>{nomeDisposivito}</TipoDispStyled>
+            <BtnAddStyled onClick={noClique} value={idDispositivo}>Adicionar</BtnAddStyled>
+        </CardStyled>
+    );
+};
 
 CardAddDisp.propTypes = {
     linkFotoDispositivo: PropTypes.string.isRequired,

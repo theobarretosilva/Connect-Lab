@@ -2,7 +2,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { buildAxiosConfig } from "../../utils/config.jsx";
-import { redirect } from "react-router-dom";
 
 // function TimeOut(){
 //     const [finishedTimeout, setFinishedTimeout] = useState(false);
@@ -75,7 +74,7 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
             localStorage.setItem("dadosUsuario", JSON.stringify(response.data))
             localStorage.setItem("meutoken", JSON.stringify(response.data.token))
             localStorage.setItem("idUsuario", JSON.stringify(response.data.user._id))
-            toast.success('Login efetuado com sucesso. Redirecionando você para a página inicial!', {
+            return toast.success('Login efetuado com sucesso. Redirecionando você para a página inicial!', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -84,7 +83,6 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
                 draggable: true,
                 progress: undefined
             })
-            return redirect("/")
         }
     })
     .catch((error) => console.log(error))
@@ -160,7 +158,14 @@ export const buscarDispUsu = () => {
 export const deletDispUsu = (idDisp) => {
 
     return axios.delete(`http://localhost:3030/userDevices/${idDisp}`, buildAxiosConfig())
-        .then((response)=> console.log(response))
+        .then((response)=> {
+            console.log(response)
+            if(response.statusText === "OK"){
+                setTimeout(() => {
+                    window.location.reload()
+                }, 10000)
+            }
+        })
         .catch((error)=> console.log(error));
 };
 
