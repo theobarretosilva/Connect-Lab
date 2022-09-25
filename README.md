@@ -41,10 +41,10 @@ O website conta com as seguintes funções:
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/theobarretosilva/Restheorante>
+$ git clone <https://github.com/theobarretosilva/Connect-Lab.git>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd Restheorante
+$ cd Connect-Lab
 
 # Instale as dependências
 $ npm install
@@ -54,3 +54,26 @@ $ npm run dev
 
 # O servidor inciará na porta:5173 - acesse <http://127.0.0.1:5173/>
 ```
+
+Tabela de conteúdos
+=================
+<!--ts-->
+   * [Sobre o projeto](#Sobre-o-projeto)
+   * [Layout](#layout)
+   * [Tecnologias utilizadas](#tecnologias-utilizadas)
+   * [Como usar](#como-usar)
+      * [Pre Requisitos](#pre-requisitos)
+      * [Rodando o Back End](#rodando-o-backend)
+   * [Tabela de conteúdos](#testes)
+<!--te-->
+
+### Autor
+---
+
+<a>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/103266889?s=400&u=cabf9707827d053f65f307126d95decf1182d49b&v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Théo Barreto</b></sub></a> <a href="https://github.com/theobarretosilva" title="GitHub">🚀</a>
+
+
+Feito com ❤️ por Théo Barreto 👋🏽 Entre em contato!
