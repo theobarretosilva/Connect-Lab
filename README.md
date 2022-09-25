@@ -16,4 +16,6 @@ O website conta com as seguintes funções:
   - Uma página de perfil do usuário, mostrando algumas informações do mesmo, com a opção de fazer logout ou editar as informações do usuário;
   - Uma página de edição das informações do usuário;
   
-  ## 📐 Layout
+## 📐 Layout
+
+<img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20cadastro.png" width="500"/>
