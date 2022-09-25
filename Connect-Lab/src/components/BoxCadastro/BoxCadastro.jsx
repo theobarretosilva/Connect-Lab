@@ -204,7 +204,7 @@ export const BoxCadastro = () => {
                     </DivBaseStyled>
                     <BtnCadastrese>Cadastre-se</BtnCadastrese>
                 </form>
-                <Link to={"/login"}><PCadastreseStyled>Já tem uma conta? Faça login!</PCadastreseStyled></Link>
+                <Link to={"/"}><PCadastreseStyled>Já tem uma conta? Faça login!</PCadastreseStyled></Link>
             </BoxCadastroStyled>
         </main>
     );

@@ -36,7 +36,7 @@ export const BoxPerfil = () => {
                 <EnderecoStyled>{cidadeUsu} - {estadoUsu}</EnderecoStyled>
             </DivEnderecoStyled>
             <Link to="/editarDadosUsu"><BtnAteraDadosStyled>Alterar meus dados</BtnAteraDadosStyled></Link>
-            <Link to="/login"><SairStyled onClick={limpaLS}>Sair</SairStyled></Link>
+            <Link to="/"><SairStyled onClick={limpaLS}>Sair</SairStyled></Link>
         </MainPerfilStyled>        
     );
 };

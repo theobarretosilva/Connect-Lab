@@ -37,7 +37,7 @@ export const BoxDetalhesDisp = () => {
                             <PInfoStyled><b>Força do sinal: </b>{value.device.info.signal}</PInfoStyled>
                         </DivDadosInfoStyled>
                     </DivInfoStyled>
-                    <Link to="/" replace={true}><BtnRemoveDispStyled onClick={deletaDisp} value={value._id}>Remover dispositivo</BtnRemoveDispStyled></Link>
+                    <Link to="/inicio" replace={true}><BtnRemoveDispStyled onClick={deletaDisp} value={value._id}>Remover dispositivo</BtnRemoveDispStyled></Link>
                 </SectionDetalheStyled>
             ))};
         </main>
