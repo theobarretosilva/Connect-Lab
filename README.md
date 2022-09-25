@@ -18,4 +18,13 @@ O website conta com as seguintes funções:
   
 ## 📐 Layout
 
-<img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20cadastro.png" width="500"/>
+<div display="flex">
+  <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20cadastro.png" width="450"/>
+  <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20login.png" width="450"/>
+  <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20inicial.png" width="450"/>
+  <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20detalhes%20do%20disp.png" width="450"/>
+  <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20dispositivos.png" width="450"/>
+  <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20perfil%20do%20usuario.png" width="450"/>
+  <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Tela%20de%20edicao%20de%20dados%20do%20usu.png" width="450"/>
+  <img src="https://github.com/theobarretosilva/Connect-Lab/blob/main/Connect-Lab/src/assets/imgs/Modal%20add%20disp.png" width="450"/>
+</div>
