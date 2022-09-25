@@ -6,13 +6,15 @@ export const DivDispositivoStyled = styled.div`
     border-radius: 10px;
     border: none;
     width: 360px;
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 14%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 `
 
 export const DivStyled = styled.div`
     display: flex;
+    justify-content: space-between;
 `
 
 export const ImgProdutoStyled = styled.img`
@@ -56,7 +58,7 @@ export const ImgOnOffStyled = styled.img`
 
 export const BtnOnStyled = styled.button`
     width: 20%;
-    height: 40%;
+    height: 35px;
     background: ${({ theme }) => theme.colors.terciaria};
     box-shadow: inset 0px 8px 8px ${({ theme }) => theme.sombras.primaria};
     border-radius: 10px;
@@ -85,4 +87,18 @@ export const SectionDispositivosStyled = styled.section`
     display: grid;
     grid-template-columns: 350px 350px 350px;
     justify-content: space-between;
+`
+
+export const DetalhesStyled = styled.button`
+    margin-top: 0;
+    margin-bottom: 2%;
+    cursor: pointer;
+    text-decoration: underline;
+    width: 35%;
+    border: none;
+    background-color: ${({ theme }) => theme.colors.primaria};
+    font-size: 15px;
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.octonaria};
+    font-family: 'Inter', sans-serif;
 `

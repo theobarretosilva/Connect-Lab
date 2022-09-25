@@ -1,37 +1,53 @@
-import { ThemeProvider } from "styled-components"
-import { myTheme } from "../../styles/defaultThemes"
-import { GlobalStyle } from "../../styles/globalStyle"
-import { BtnDetailsDispStyled, BtnRemoveDispStyled, DivDadosInfoStyled, DivInfoStyled, DivOnOffStyled, H3InfoStyled, ImgDetalhesStyled, LinhaStyled, PInfoStyled, TipoDispStyled, SectionDetalheStyled, PStyled } from "./BoxDetalhesDisp.styles"
-import { H1Styled } from "../BoxPerfil/BoxPerfil.styles"
+import { ThemeProvider } from "styled-components";
+import { myTheme } from "../../styles/defaultThemes";
+import { GlobalStyle } from "../../styles/globalStyle";
+import { BtnRemoveDispStyled, DivDadosInfoStyled, DivInfoStyled, DivOnOffStyled, H3InfoStyled, ImgDetalhesStyled, LinhaStyled, PInfoStyled, TipoDispStyled, SectionDetalheStyled, PStyled } from "./BoxDetalhesDisp.styles"
+import { H1Styled } from "../BoxPerfil/BoxPerfil.styles";
+import PropTypes from 'prop-types';
 
-export const BoxDetalhesDisp = () => {
+export const BoxDetalhesDisp = ({ nomeDisp, tipoDisp, imgDisp, altImg, dispOnOff, btnOnOff, marcaDisp, idVirtual, enderecoIp, enderecoMAC, fusoHorario, forcaSinal}) => {
     return(
         <ThemeProvider theme={myTheme}>
             <GlobalStyle />
             <main>
                 <SectionDetalheStyled>
-                    <H1Styled>Lâmpada sala de jantar</H1Styled>
-                    <TipoDispStyled>Lâmpada inteligente</TipoDispStyled>
-                    <ImgDetalhesStyled src="https://intelbras.vteximg.com.br/arquivos/ids/160115-1000-1000/ews_407_front_cor.jpg?v=637564221001370000"/>
+                    <H1Styled>{nomeDisp}</H1Styled>
+                    <TipoDispStyled>{tipoDisp}</TipoDispStyled>
+                    <ImgDetalhesStyled src={imgDisp} alt={altImg}/>
                     <DivOnOffStyled>
-                        <PStyled>Dispositivo ligado</PStyled>
-                        <BtnDetailsDispStyled><img src="../../../src/assets/imgs/On.png" alt="Imagem on ou off" /></BtnDetailsDispStyled>
+                        <PStyled>Dispositivo {dispOnOff}</PStyled>
+                        {btnOnOff}
                     </DivOnOffStyled>
                     <DivInfoStyled>
                         <H3InfoStyled>Informações do dispositivo</H3InfoStyled>
                         <LinhaStyled />
                         <DivDadosInfoStyled>
-                            <PInfoStyled><b>Marca: </b>Intelbras</PInfoStyled>
-                            <PInfoStyled><b>ID virtual: </b>1ea71523f6f296c29711</PInfoStyled>
-                            <PInfoStyled><b>Endereço IP: </b>138.204.21.221</PInfoStyled>
-                            <PInfoStyled><b>Endereço MAC: </b>87:e3:34:ff:ed:34</PInfoStyled>
-                            <PInfoStyled><b>Fuso horário: </b>América/Sao_Paulo</PInfoStyled>
-                            <PInfoStyled><b>Força do sinal: </b>-70dBm</PInfoStyled>
+                            <PInfoStyled><b>Marca: </b>{marcaDisp}</PInfoStyled>
+                            <PInfoStyled><b>ID virtual: </b>{idVirtual}</PInfoStyled>
+                            <PInfoStyled><b>Endereço IP: </b>{enderecoIp}</PInfoStyled>
+                            <PInfoStyled><b>Endereço MAC: </b>{enderecoMAC}</PInfoStyled>
+                            <PInfoStyled><b>Fuso horário: </b>{fusoHorario}</PInfoStyled>
+                            <PInfoStyled><b>Força do sinal: </b>{forcaSinal}</PInfoStyled>
                         </DivDadosInfoStyled>
                     </DivInfoStyled>
                     <BtnRemoveDispStyled>Remover dispositivo</BtnRemoveDispStyled>
                 </SectionDetalheStyled>
             </main>
         </ThemeProvider>
-    )
-}
+    );
+};
+
+BoxDetalhesDisp.propTypes = {
+    nomeDisp: PropTypes.string.isRequired,
+    tipoDisp: PropTypes.string.isRequired,
+    imgDisp: PropTypes.string.isRequired,
+    altImg: PropTypes.string.isRequired,
+    dispOnOff: PropTypes.string.isRequired,
+    btnOnOff: PropTypes.node.isRequired,
+    marcaDisp: PropTypes.string.isRequired,
+    idVirtual: PropTypes.string.isRequired,
+    enderecoIp: PropTypes.string.isRequired,
+    enderecoMAC: PropTypes.string.isRequired,
+    fusoHorario: PropTypes.string.isRequired,
+    forcaSinal: PropTypes.string.isRequired,
+};
