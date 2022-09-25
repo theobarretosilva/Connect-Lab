@@ -4,11 +4,11 @@ import { ThemeProvider } from "styled-components";
 import { myTheme } from "../../styles/defaultThemes";
 import { GlobalStyle } from "../../styles/globalStyle";
 
-export const CardDispositivo = ({ img, descriImg, nomeDisp, localDisp, POnOff, BtnOnOff }) => {
+export const CardDispositivo = ({ img, descriImg, nomeDisp, localDisp, POnOff, BtnOnOff, clickDetails }) => {
     return(
         <ThemeProvider theme={myTheme}>
             <GlobalStyle />
-            <DivDispositivoStyled>
+            <DivDispositivoStyled onClick={clickDetails}>
                 <ImgProdutoStyled src={img} alt={descriImg}/>
                 <DivLocOnOffStyled>
                     <PNomeDispStyled>{nomeDisp}</PNomeDispStyled>
@@ -28,4 +28,5 @@ CardDispositivo.propTypes = {
     localDisp: PropTypes.string.isRequired,
     POnOff: PropTypes.string.isRequired,
     BtnOnOff: PropTypes.node.isRequired,
+    clickDetails: PropTypes.func.isRequired,
 };

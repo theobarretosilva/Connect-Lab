@@ -21,15 +21,20 @@ export const TelaInicio = () => {
         console.log(filtroNovo)
     }
 
+    const teste = (e) => {
+        console.log(e.target.value)
+    }
+
     return(
         <>
             <HeaderbarInicio />
             <PrevisaoTempo />
             <FiltroDispositivos funcao={handleFilter} />
             <SectionDispositivosStyled>
-                {valorFiltrado.map((value, key) => (
+                {valorFiltrado.map((value) => (
                     <CardDispositivo
-                        key={key}
+                        key={value._id}
+                        clickDetails={teste}
                         img={value.device.photoUrl}
                         descriImg={value.device.name}
                         nomeDisp={value.device.name}
