@@ -8,8 +8,12 @@ O projeto **Connect Lab** é um site construído no 2° projeto do módulo 1 no 
 
 A aplicação consiste em um site onde o usuário pode gerenciar, adicionar e vizualizar os seus dispositívos inteligentes.
 
-<!-- O website conta com as seguintes funções:
-  - Filtragem de pratos com o menu de seções
-  - Cards com os pratos disponíveis no restaurante
-  - Conta com a descrição dos pratos, como nome, descrição, preço e tempo de preparo
-  - Conta com um rodapé repleto de informações sobre o restaurante -->
+O website conta com as seguintes funções:
+  - Autenticação dos usuários;
+  - Uma página inicial, contando com uma seção que mostra as informações do tempo, de acordo com o endereço cadastrado pelo usuário, os dispositivos inteligentes adicionados pelo usuário, podendo ligá-los e desligá-los e filtros dos dispositivos, de acordo com o cômodo desejado;
+  - Uma página de detalhes do dispositivo escolhido, podendo removê-lo;
+  - Uma página com todos os dispositivos disponíveis para adição ao usuário, podendo escolher o local e o cômodo. Também conta com uma barra de pesquisa, para facilitar a busca do dispositivo desejado;
+  - Uma página de perfil do usuário, mostrando algumas informações do mesmo, com a opção de fazer logout ou editar as informações do usuário;
+  - Uma página de edição das informações do usuário;
+  
+  ## 📐 Layout
