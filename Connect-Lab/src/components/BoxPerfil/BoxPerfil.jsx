@@ -5,7 +5,7 @@ import { GlobalStyle } from "../../styles/globalStyle";
 import { Link } from "react-router-dom";
 
 export const BoxPerfil = () => {
-    const dadosLS = JSON.parse(localStorage.getItem("Dados usuario"));
+    const dadosLS = JSON.parse(localStorage.getItem("dadosUsuario"));
     const linkFotoUsu = dadosLS.user.photoUrl;
     const nomeUsu = dadosLS.user.fullName;
     const emailUsu = dadosLS.user.email;

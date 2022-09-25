@@ -1,16 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
 import { Router } from "./router";
-import { AutenticacaoProvider } from "./contexts";
 import "./assets/css/App.css"
-import { createBrowserHistory } from "history";
+import { history } from "./router/history";
 
 function App() {
-  const history = createBrowserHistory();
   return (
     <BrowserRouter history={history}>
-      <AutenticacaoProvider>
         <Router />
-      </AutenticacaoProvider>
     </BrowserRouter>
   )
 }

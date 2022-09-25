@@ -42,8 +42,8 @@ export const TelaDispositivos = () => {
         .then((value) => {
             localStorage.setItem("locaisAddDisp", JSON.stringify(value))
             value.map((valor)=> console.log(valor.description))
-        })
-    }
+        });
+    };
 
     useEffect(()=> {
         carregaLocais();

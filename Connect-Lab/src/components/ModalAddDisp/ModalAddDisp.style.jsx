@@ -21,7 +21,7 @@ export const BoxModalStyled = styled.section`
     text-align: center;
     margin-top: 1%;
     width: 550px;
-    height: 400px;
+    height: 335px;
     margin-left: 30%;
     display: flex;
     flex-direction: column;

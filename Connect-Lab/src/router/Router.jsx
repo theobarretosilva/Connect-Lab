@@ -14,7 +14,7 @@ export const Router = () => {
             <Route exact path="/editarDadosUsu" element={<TelaEditDadosUsu />} />
             <Route exact path="/detalhesDisp" element={<TelaDetalhesDisp />} />
         </Routes>
-    )
-}
+    );
+};
 
 export default Router;

@@ -10,9 +10,9 @@ import { BoxCadastroStyled, BtnCadastrese, CadastreseStyled, DivBaseStyled, DivI
 import { InputError } from "../InputError/InputError";
 import { PESStyled } from "../BoxLogin/BoxLogin.styles"
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export const BoxEditPerfil = () => {
-
     const validationSchema = yup.object({
         nomeCompleto: yup.string().required(),
         email: yup.string().email().required(),
@@ -24,6 +24,8 @@ export const BoxEditPerfil = () => {
         endereco: yup.string().required(),
         numeroEndereco: yup.number().required(),
         complementoEndereco: yup.string(),
+        senha: yup.string().min(8).required(),
+        confirmacaoSenha: yup.string().min(8).oneOf([yup.ref("senha"), null]).required(),
     });
 
     const {
@@ -31,17 +33,18 @@ export const BoxEditPerfil = () => {
         handleSubmit,
         setValue,
         setFocus,
-        formState: { errors }
+        formState: { errors },
     } = useForm({resolver: yupResolver(validationSchema)});
 
     const onSubmit = (e) => {
         try{
-            atualizaUsuario(e.nomeCompleto, e.dataDeNscimento, e.email, e.linkFotoPerfil, e.senha, e.telefone, e.cep, e.estado, e.cidade, e.bairro, e.endereco, e.numeroEndereco, e.complementoEndereco)
+            atualizaUsuario(e.nomeCompleto, e.dataDeNscimento, e.email, e.linkFotoPerfil, e.senha, e.telefone, e.cep, e.estado, e.cidade, e.bairro, e.endereco, e.numeroEndereco, e.complementoEndereco);
+            localStorage.setItem("dadosUsuario", JSON.stringify(e))
         } catch (error) {
-            console.log(error)
-        }
-        console.log(e)
-    }
+            console.log(error);
+        };
+        console.log(e);
+    };
 
     const checkCEP = (e) => {
         const cep = e.target.value.replace(/\D/g, "");
@@ -53,27 +56,33 @@ export const BoxEditPerfil = () => {
                 setValue("cidade", data.localidade);
                 setValue("bairro", data.bairro);
                 setFocus("numeroEndereco");
-        })
-    }
+        });
+    };
 
     const populaInputs = () => {
-        const dadosLS = JSON.parse(localStorage.getItem("Dados usuario"));
-        setValue("nomeCompleto", dadosLS.user.fullName)
-        setValue("email", dadosLS.user.email)
-        setValue("linkFotoPerfil", dadosLS.user.photoUrl)
-        setValue("telefone", dadosLS.user.phone)
-        setValue("cep", dadosLS.user.userAddress.zipCode)
-        setValue("estado", dadosLS.user.userAddress.state)
-        setValue("cidade", dadosLS.user.userAddress.city)
-        setValue("bairro", dadosLS.user.userAddress.neighborhood)
-        setValue("endereco", dadosLS.user.userAddress.street)
-        setValue("numeroEndereco", dadosLS.user.userAddress.number)
-        setValue("complementoEndereco", dadosLS.user.userAddress.complement)
-    }
+        const dadosLS = JSON.parse(localStorage.getItem("dadosUsuario"));
+        setValue("nomeCompleto", dadosLS.nomeCompleto);
+        setValue("dataDeNascimento", dadosLS.dataDeNascimento)
+        setValue("email", dadosLS.email);
+        setValue("linkFotoPerfil", dadosLS.linkFotoPerfil);
+        setValue("telefone", dadosLS.telefone);
+        setValue("cep", dadosLS.cep);
+        setValue("estado", dadosLS.estado);
+        setValue("cidade", dadosLS.cidade);
+        setValue("bairro", dadosLS.bairro);
+        setValue("endereco", dadosLS.endereco);
+        setValue("numeroEndereco", dadosLS.numeroEndereco);
+        setValue("complementoEndereco", dadosLS.complementoEndereco);
+        setValue("senha", dadosLS.senha);
+    };
+
+    useEffect(()=> {
+        populaInputs();
+    });
 
     function onError(error){
-        console.log(error)
-    }
+        console.log(error);
+    };
 
     return(
         <ThemeProvider theme={myTheme}>
@@ -201,11 +210,31 @@ export const BoxEditPerfil = () => {
                                 {errors?.complementoEndereco?.type && <InputError type={errors.complementoEndereco.type} field="complementoEndereco" />}
                             </DivInputStyled>
                         </DivBaseStyled>
+                        <DivBaseStyled>
+                            <DivInputStyled>
+                                    <PESStyled>Senha *</PESStyled>
+                                    <InputCadastroStyled
+                                        type="password"
+                                        {...register("senha")}
+                                        placeholder="Sua senha"
+                                    />
+                                    {errors?.senha?.type && <InputError type={errors.senha.type} field="senha" />}
+                                </DivInputStyled>
+                                <DivInputStyled>
+                                    <PESStyled>Confirmação de senha *</PESStyled>
+                                    <InputCadastroStyled
+                                        type="password"
+                                        {...register("confirmacaoSenha")}
+                                        placeholder="Confirme a sua senha"
+                                    />
+                                    {errors?.confirmacaoSenha?.type && <InputError type={errors.confirmacaoSenha.type} field="confirmacaoSenha" />}
+                                </DivInputStyled>
+                            </DivBaseStyled>
                         <BtnCadastrese>Salvar</BtnCadastrese>
                     </form>
                     <Link to={"/perfil"}><PLoginStyled>Cancelar</PLoginStyled></Link>
                 </BoxCadastroStyled>
             </main>
         </ThemeProvider>
-    )
-}
+    );
+};

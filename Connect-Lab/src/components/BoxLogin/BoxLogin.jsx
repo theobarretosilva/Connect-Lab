@@ -1,7 +1,5 @@
 import { AcessarStyled, BoxLoginStyled, BtnLogin, DivStyled, InputStyled, PCadastreseStyled, PESStyled } from './BoxLogin.styles.jsx'
 import { useForm } from "react-hook-form";
-import { useContext } from 'react'
-import { AutenticacaoContext } from '../../contexts/Autenticacao/AutenticacaoContext.jsx';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../styles/defaultThemes'
 import { Link } from 'react-router-dom';
@@ -12,8 +10,11 @@ import { fazerLogin } from '../../service/api/axios.jsx';
 import { GlobalStyle } from '../../styles/globalStyle.jsx';
 
 export const BoxLogin = () => {
+    // const [input, setInput] = useState('')
+    // const [hidePass, setHidePass] = useState(true);
+
     // eslint-disable-next-line no-unused-vars
-    const { authenticated, login } = useContext(AutenticacaoContext);
+    // const { authenticated, login } = useContext(AutenticacaoContext);
 
     const validationSchema = yup.object({
         email: yup.string().email().required(),
@@ -54,8 +55,14 @@ export const BoxLogin = () => {
                                 placeholder="Sua senha" 
                                 type="password" 
                                 {...register("senha")} 
+                                // value={input}
+                                // onChange={(texto)=> setInput(texto)}
                             />
                         </DivStyled>
+                        {/* <DivMostraSenhaStyled>
+                            <CheckSenhaStyled onClick={()=> setHidePass(!hidePass)} type="checkbox"/>
+                            <LabelCheckStyled>Mostrar senha</LabelCheckStyled>
+                        </DivMostraSenhaStyled> */}
                         <BtnLogin>Fazer login</BtnLogin>
                     </form>
                     <Link to={"/cadastroUsu"}><PCadastreseStyled>Cadastre-se</PCadastreseStyled></Link>

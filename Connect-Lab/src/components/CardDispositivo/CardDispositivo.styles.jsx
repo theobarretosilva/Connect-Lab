@@ -4,30 +4,36 @@ export const DivDispositivoStyled = styled.div`
     background: ${({ theme }) => theme.colors.primaria};
     box-shadow: 0px 4px 4px ${({ theme }) => theme.sombras.primaria};
     border-radius: 10px;
-    width: 283px;
+    width: 350px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     cursor: pointer;
+    margin-bottom: 14%;
 `
 export const ImgProdutoStyled = styled.img`
-    width: 70px;
+    width: 80px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 10px;
 `
 
 export const PNomeDispStyled = styled.p`
     color: ${({ theme }) => theme.colors.octonaria};
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 19px;
     text-align: center;
-    margin-top: 16%;
+    max-width: 155px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `
 
 export const DivLocOnOffStyled = styled.div`
     text-align: center;
-    margin-right: 5%;
-    margin-top: 2.6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
 
 export const PLocOnOffStyled= styled.p`
@@ -35,7 +41,7 @@ export const PLocOnOffStyled= styled.p`
     color: ${({ theme }) => theme.colors.nonaria};
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
 `
 
 export const ImgOnOffStyled = styled.img`
@@ -44,7 +50,7 @@ export const ImgOnOffStyled = styled.img`
 `
 
 export const BtnOnStyled = styled.button`
-    width: 24%;
+    width: 20%;
     height: 40%;
     background: ${({ theme }) => theme.colors.terciaria};
     box-shadow: inset 0px 8px 8px ${({ theme }) => theme.sombras.primaria};
@@ -68,7 +74,10 @@ export const BtnOffStyled = styled.button`
 `
 
 export const SectionDispositivosStyled = styled.section`
-    margin-left: 3.8%;
-    margin-right:3.8%;
-    margin-top: 1.8%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    justify-content: space-between;
 `

@@ -8,7 +8,7 @@ export const PrevisaoTempo = () => {
 
     const [weather, setWeather] = useState();
 
-    const dadosLS = JSON.parse(localStorage.getItem("Dados usuario"));
+    const dadosLS = JSON.parse(localStorage.getItem("dadosUsuario"));
     const cidadeUser = dadosLS.user.userAddress.city;
 
     const apiWeather = {

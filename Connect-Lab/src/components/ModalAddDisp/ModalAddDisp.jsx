@@ -32,10 +32,13 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
             .then((value) => {
                 console.log(value)
                 setRemoveLoading(false)
+                setTimeout(console.log("gadgag"), 5000)
             })
     }
 
     const locaisDisp = JSON.parse(localStorage.getItem("locaisAddDisp"));
+    const numAleatorio = Math.floor(Math.random() * 20000 + 5000);
+
     return(
         <ThemeProvider theme={myTheme}>
             <GlobalStyle />
@@ -60,9 +63,9 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
                                     <option selected disabled value="">Selecione o cômodo</option>
                                     <option value="Quarto">Quarto</option>
                                     <option value="Cozinha">Cozinha</option>
-                                    <option value="SalaDeEstar">Sala de estar</option>
-                                    <option value="SalaDeJantar">Sala de jantar</option>
-                                    <option value="ÁreaDeServiço">Área de serviço</option>
+                                    <option value="Sala de estar">Sala de estar</option>
+                                    <option value="Sala de jantar">Sala de jantar</option>
+                                    <option value="Área de serviço">Área de serviço</option>
                                 </SelectModalStyled>
                             </DivSelectStyled>
                             <DivBtnsStyled>

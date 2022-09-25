@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { buildAxiosConfig } from "../../utils/config.jsx";
 import "react-toastify/dist/ReactToastify.css";
+import { buildAxiosConfig } from "../../utils/config.jsx";
 
 export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
     const dadosCadastro = {
@@ -27,7 +27,7 @@ export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, e
         console.log(response)
         console.log(response.statusText)
         if(response.statusText === "Created"){
-            localStorage.setItem("Dados usuario", JSON.stringify(response.data))
+            localStorage.setItem("dadosUsuario", JSON.stringify(response.data))
             localStorage.setItem("meutoken", JSON.stringify(response.data.token))
             return toast.success('Usuário cadastrado com sucesso! Redirecionando você para a página de login!', {
                 position: "top-right",
@@ -40,8 +40,8 @@ export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, e
             })
         }
     })
-    .catch((error) => console.log(error))
-}
+    .catch((error) => console.log(error));
+};
 
 export const fazerLogin = (emailUsu, senhaUsu) => {
     const dadosLogin = {
@@ -54,7 +54,7 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
         console.log(response)
         console.log(response.statusText)
         if(response.statusText === "OK"){
-            localStorage.setItem("Dados usuario", JSON.stringify(response.data))
+            localStorage.setItem("dadosUsuario", JSON.stringify(response.data))
             localStorage.setItem("meutoken", JSON.stringify(response.data.token))
             localStorage.setItem("idUsuario", JSON.stringify(response.data.user._id))
             return toast.success('Login efetuado com sucesso. Redirecionando você para a página inicial!', {
@@ -89,16 +89,14 @@ export const atualizaUsuario = (nome, dataNasc, emailUsu, linkFoto, senha, telef
             complement: complemento
         }
     }
-
     const dadosLS = JSON.parse(localStorage.getItem("idUsuario"));
 
     axios.put(`http://localhost:3030/users/${dadosLS}`, dadosAtualizacao, buildAxiosConfig())
         .then((response) => {
             console.log(response)
-            localStorage.setItem("Dados usuario", JSON.stringify(response.data))
             localStorage.setItem("idUsuario", JSON.stringify(response.data._id))
         })
-        .catch((error) => console.log(error))
+        .catch((error) => console.log(error));
 }
 
 export const buscarListaDispositivos = () => {

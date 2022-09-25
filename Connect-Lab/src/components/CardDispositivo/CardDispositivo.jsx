@@ -1,10 +1,10 @@
-import { DivDispositivoStyled, ImgProdutoStyled, PNomeDispStyled, DivLocOnOffStyled, PLocOnOffStyled, BtnOffStyled, ImgOnOffStyled } from "./CardDispositivo.styles";
+import { DivDispositivoStyled, ImgProdutoStyled, PNomeDispStyled, DivLocOnOffStyled, PLocOnOffStyled } from "./CardDispositivo.styles";
 import PropTypes from 'prop-types';
 import { ThemeProvider } from "styled-components";
 import { myTheme } from "../../styles/defaultThemes";
 import { GlobalStyle } from "../../styles/globalStyle";
 
-export const CardDispositivo = (img, descriImg, nomeDisp, localDisp, POnOff, BtnOnOff) => {
+export const CardDispositivo = ({ img, descriImg, nomeDisp, localDisp, POnOff, BtnOnOff }) => {
     return(
         <ThemeProvider theme={myTheme}>
             <GlobalStyle />
@@ -15,7 +15,6 @@ export const CardDispositivo = (img, descriImg, nomeDisp, localDisp, POnOff, Btn
                     <PLocOnOffStyled>{localDisp} | {POnOff}</PLocOnOffStyled>
                 </DivLocOnOffStyled>
                 {BtnOnOff}
-                <BtnOffStyled><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>
             </DivDispositivoStyled>
         </ThemeProvider>
         
@@ -27,6 +26,6 @@ CardDispositivo.propTypes = {
     descriImg: PropTypes.string,
     nomeDisp: PropTypes.string.isRequired,
     localDisp: PropTypes.string.isRequired,
-    POnOff: PropTypes.bool.isRequired,
+    POnOff: PropTypes.string.isRequired,
     BtnOnOff: PropTypes.node.isRequired,
 };

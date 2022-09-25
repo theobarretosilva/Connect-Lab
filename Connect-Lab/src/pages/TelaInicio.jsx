@@ -1,33 +1,41 @@
+import { useState } from "react";
 import { CardDispositivo } from "../components/CardDispositivo/CardDispositivo";
 import { BtnOffStyled, BtnOnStyled, ImgOnOffStyled, SectionDispositivosStyled } from "../components/CardDispositivo/CardDispositivo.styles";
 import { FiltroDispositivos } from "../components/FiltrosDispositivos/FiltrosDispositivos";
 import { HeaderbarInicio } from "../components/HeaderbarInicio/HeaderbarInicio";
 import { PrevisaoTempo } from "../components/PrevisaoTempo/PrevisaoTempo"
-import { buscarDispUsu } from "../service/api/axios";
 
 export const TelaInicio = () => {
-    buscarDispUsu();
+
     const dispositivosDoUsuario = JSON.parse(localStorage.getItem("dispositivosDoUsuario"));
-    dispositivosDoUsuario.map((value)=> (
-        console.log(value._id)
-    ))
-    console.log(dispositivosDoUsuario.is_on)
+    const [valorFiltrado, setValorFiltrado] = useState(dispositivosDoUsuario);
     
+    function handleFilter(event){
+        const busca = event.target.value;
+        console.log(busca)
+        const filtroNovo = dispositivosDoUsuario.filter((value) => {
+            console.log(value.room)
+            return (value.room === busca ? (value.room) : (undefined));
+        });
+        setValorFiltrado(filtroNovo)
+        console.log(filtroNovo)
+    }
+
     return(
         <>
             <HeaderbarInicio />
             <PrevisaoTempo />
-            <FiltroDispositivos />
+            <FiltroDispositivos funcao={handleFilter} />
             <SectionDispositivosStyled>
-                {dispositivosDoUsuario.map((value, key) => (
-                    <CardDispositivo 
+                {valorFiltrado.map((value, key) => (
+                    <CardDispositivo
                         key={key}
                         img={value.device.photoUrl}
                         descriImg={value.device.name}
                         nomeDisp={value.device.name}
                         localDisp={value.room}
-                        POnOff={value.is_on}
-                        BtnOnOff={value.device.is_on ? (
+                        POnOff={value.is_on ? ("ON") : ("OFF")}
+                        BtnOnOff={value.is_on ? (
                             <BtnOnStyled><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>
                             ) : (<BtnOffStyled><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)
                         }
