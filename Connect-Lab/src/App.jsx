@@ -1,7 +1,7 @@
-import { BrowserRouter } from "react-router-dom";
-import { Router } from "./router";
+import { Router } from "./router/Router";
 import "./assets/css/App.css"
-import { history } from "./router/history";
+import { BrowserRouter } from "react-router-dom";
+import { history } from "./router/history"
 
 function App() {
   return (
