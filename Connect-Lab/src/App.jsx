@@ -6,7 +6,7 @@ import { history } from "./router/history";
 function App() {
   return (
     <BrowserRouter history={history}>
-        <Router />
+      <Router />
     </BrowserRouter>
   )
 }

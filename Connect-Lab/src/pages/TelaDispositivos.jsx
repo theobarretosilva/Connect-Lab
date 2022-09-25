@@ -4,7 +4,7 @@ import { GroupDispAddStyled } from "../components/CardAddDisp/CardAddDisp.styles
 import { HeaderbarDisp } from "../components/HeaderbarDisp/HeaderbarDisp";
 import { SearchBarDisp } from "../components/SearchBarDisp/SearchBarDisp";
 import { TituloTelaDisp } from "../components/TituloTelaDisp/TituloTelaDisp";
-import { buscarDispUsu, buscarListaDispositivos, buscarListaLocais } from "../service/api/axios"
+import { buscarListaDispositivos, buscarListaLocais } from "../service/api/axios"
 import { ModalAddDisp } from "../components/ModalAddDisp/ModalAddDisp"
 
 export const TelaDispositivos = () => {
@@ -47,7 +47,6 @@ export const TelaDispositivos = () => {
 
     useEffect(()=> {
         carregaLocais();
-        buscarDispUsu();
     }, []);
 
     return(

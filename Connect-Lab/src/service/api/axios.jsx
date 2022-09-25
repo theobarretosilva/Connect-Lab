@@ -2,6 +2,25 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { buildAxiosConfig } from "../../utils/config.jsx";
+import { redirect } from "react-router-dom";
+
+// function TimeOut(){
+//     const [finishedTimeout, setFinishedTimeout] = useState(false);
+    
+//     useEffect(()=> {
+//         const teste = setTimeout(()=> {
+//             setFinishedTimeout(true);
+//         }, 5050);
+
+//         return ()=> clearTimeout(teste);
+//     }, []);
+
+//     return(
+//         finishedTimeout && <Navigate to="/" replace={true} />
+//     )
+
+// }
+// TimeOut();
 
 export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
     const dadosCadastro = {
@@ -47,8 +66,7 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
     const dadosLogin = {
       email: emailUsu,
       password: senhaUsu,
-    };
-  
+    };    
     return axios.post("http://localhost:3030/auth/login", dadosLogin)
     .then((response) => {
         console.log(response)
@@ -57,7 +75,7 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
             localStorage.setItem("dadosUsuario", JSON.stringify(response.data))
             localStorage.setItem("meutoken", JSON.stringify(response.data.token))
             localStorage.setItem("idUsuario", JSON.stringify(response.data.user._id))
-            return toast.success('Login efetuado com sucesso. Redirecionando você para a página inicial!', {
+            toast.success('Login efetuado com sucesso. Redirecionando você para a página inicial!', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -66,6 +84,7 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
                 draggable: true,
                 progress: undefined
             })
+            return redirect("/")
         }
     })
     .catch((error) => console.log(error))
@@ -136,6 +155,13 @@ export const buscarDispUsu = () => {
             localStorage.setItem("dispositivosDoUsuario", JSON.stringify(response.data))
         })
         .catch((error) => console.log(error))
+}
+
+export const deletDispUsu = () => {
+    const idUsu = JSON.parse(localStorage.getItem("idUsuario"));
+
+    return axios.delete(`http://localhost:3030/userDevices/${idUsu}`, buildAxiosConfig())
+        .then((response)=> console.log(response))
 }
 
 export const buscarUsuario = () => {

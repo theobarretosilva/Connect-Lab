@@ -4,12 +4,17 @@ export const DivDispositivoStyled = styled.div`
     background: ${({ theme }) => theme.colors.primaria};
     box-shadow: 0px 4px 4px ${({ theme }) => theme.sombras.primaria};
     border-radius: 10px;
-    width: 350px;
+    border: none;
+    width: 360px;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
     margin-bottom: 14%;
 `
+
+export const DivStyled = styled.div`
+    display: flex;
+`
+
 export const ImgProdutoStyled = styled.img`
     width: 80px;
     margin-top: 10px;
