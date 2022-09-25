@@ -32,5 +32,25 @@ O website conta com as seguintes funções:
 ## 🛠 Tecnologias utilizadas
 
 <div style="display: inline_block"; align= "center"; ><br>
-  <img align="center" alt="Théo-React" height="65" width="75" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+  <img align="center" alt="Théo-HTML" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg">
+  <img align="center" alt="Théo-CSS" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg">
+  <img align="center" alt="Théo-JavaScript" height="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg">
 </div>
+
+## 🎲 Rodando o Back End (servidor)
+
+```bash
+# Clone este repositório
+$ git clone <https://github.com/theobarretosilva/Restheorante>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd Restheorante
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+
+# O servidor inciará na porta:5173 - acesse <http://127.0.0.1:5173/>
+```
