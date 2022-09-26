@@ -8,13 +8,11 @@ export const AutenticacaoProvider = ({ children }) => {
 
     const handleLogin = (email, senha) => {
         fazerLogin(email, senha)
-        console.log(email, senha);
         setUsuario({ email, senha });
     };
 
     const handleLogout = () => {
         setUsuario(null)
-        console.log("logout");
     };
 
     return(

@@ -8,7 +8,6 @@ export const BoxDetalhesDisp = () => {
     const disp = JSON.parse(localStorage.getItem("dispositivosDoUsuario"));
     const idDisp = JSON.parse(localStorage.getItem("idDispUsuSelected"));
     const dados = disp.filter((e)=> e._id === idDisp)
-    console.log(dados)
 
     const deletaDisp = (e) => {
         const id = e.target.value;
@@ -25,8 +24,8 @@ export const BoxDetalhesDisp = () => {
                     <DivOnOffStyled>
                         <PStyled>Dispositivo {value.is_on ? ("ligado") : ("desligado")}</PStyled>
                         {value.is_on ? (
-                            <BtnOnStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false).then((res)=> console.log(res))) : (dispOnOff(value._id, true).then((res)=> console.log(res)))}><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>
-                            ) : (<BtnOffStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false).then((res)=> console.log(res))) : (dispOnOff(value._id, true).then((res)=> console.log(res)))}><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)}
+                            <BtnOnStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false)) : (dispOnOff(value._id, true))}><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>
+                            ) : (<BtnOffStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false)) : (dispOnOff(value._id, true))}><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)}
                     </DivOnOffStyled>
                     <DivInfoStyled>
                         <H3InfoStyled>Informações do dispositivo</H3InfoStyled>

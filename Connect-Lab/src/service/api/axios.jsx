@@ -24,8 +24,6 @@ export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, e
     
     axios.post('http://localhost:3030/auth/register', dadosCadastro)
     .then((response) => {
-        console.log(response)
-        console.log(response.statusText)
         if(response.statusText === "Created"){
             localStorage.setItem("dadosUsuario", JSON.stringify(response.data))
             localStorage.setItem("meutoken", JSON.stringify(response.data.token))
@@ -50,8 +48,6 @@ export const fazerLogin = (emailUsu, senhaUsu) => {
     };    
     return axios.post("http://localhost:3030/auth/login", dadosLogin)
     .then((response) => {
-        console.log(response)
-        console.log(response.statusText)
         if(response.statusText === "OK"){
             localStorage.setItem("dadosUsuario", JSON.stringify(response.data))
             localStorage.setItem("meutoken", JSON.stringify(response.data.token))
@@ -92,7 +88,6 @@ export const atualizaUsuario = (nome, dataNasc, emailUsu, linkFoto, senha, telef
 
     axios.put(`http://localhost:3030/users/${dadosLS}`, dadosAtualizacao, buildAxiosConfig())
         .then((response) => {
-            console.log(response)
             localStorage.setItem("dadosUsuAPI", JSON.stringify(response.data))
             return toast.success('Dados atualizados com sucesso!', {
                 position: "top-right",
@@ -138,10 +133,6 @@ export const addDispUsu = (idUser, idDevice, idLocal, comodo) => {
     }
 
     return axios.post("http://localhost:3030/userDevices", dadosDispUsu, buildAxiosConfig())
-        .then((response) => {
-            console.log(response)
-            console.log(response.statusText)
-        })
         .catch((error) => console.log(error))
 }
 
@@ -150,8 +141,6 @@ export const buscarDispUsu = () => {
 
     return axios.get(`http://localhost:3030/userDevices/user/${dadosLS}`, buildAxiosConfig())
         .then((response)=> {
-            console.log(response)
-            console.log(response.data)
             localStorage.setItem("dispositivosDoUsuario", JSON.stringify(response.data))
         })
         .catch((error) => console.log(error));
@@ -161,7 +150,6 @@ export const deletDispUsu = (idDisp) => {
 
     return axios.delete(`http://localhost:3030/userDevices/${idDisp}`, buildAxiosConfig())
         .then((response)=> {
-            console.log(response)
             if(response.statusText === "OK"){
                 setTimeout(() => {
                     window.location.reload()
@@ -180,6 +168,5 @@ export const dispOnOff = (idDisp, onOff) => {
         "is_on": onOff,
     };
 
-    return axios.put(`http://localhost:3030/userDevices/${idDisp}`, isOn, buildAxiosConfig())
-        .then((response)=> console.log(response))
+    return axios.put(`http://localhost:3030/userDevices/${idDisp}`, isOn, buildAxiosConfig());
 }

@@ -23,12 +23,9 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
     const {register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(validacao)});
 
     const onSubmit = (dados) => {
-        console.log(idUsuario, idDispSelecionado, dados.local, dados.comodo)
         addDispUsu(idUsuario, idDispSelecionado, dados.local, dados.comodo)
             .then((value) => {
-                console.log(value)
                 setRemoveLoading(false)
-                setTimeout(console.log("gadgag"), 5000)
             })
     }
 

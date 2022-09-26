@@ -37,7 +37,6 @@ export const BoxEditPerfil = () => {
         } catch (error) {
             console.log(error);
         };
-        console.log(e);
     };
 
     const checkCEP = (e) => {

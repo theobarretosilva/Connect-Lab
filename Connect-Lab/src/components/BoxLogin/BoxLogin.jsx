@@ -24,7 +24,6 @@ export const BoxLogin = () => {
     // const timeOutRed = setTimeout(redireciona('/'), 5100)
 
     const onSubmit = (dados) => {
-        console.log(dados.email, dados.senha)
         fazerLogin(dados.email, dados.senha)
     }
     

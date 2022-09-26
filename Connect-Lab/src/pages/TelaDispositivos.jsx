@@ -19,7 +19,6 @@ export const TelaDispositivos = () => {
         const idDispositivo = event.target.value;
         const dados = json.filter((e) => e._id === idDispositivo)
         localStorage.setItem("dadosDispSelected", JSON.stringify(dados))
-        console.log(dados)
         setOpenModal(true)
     }
     
@@ -44,7 +43,6 @@ export const TelaDispositivos = () => {
         buscarListaLocais()
         .then((value) => {
             localStorage.setItem("locaisAddDisp", JSON.stringify(value))
-            value.map((valor)=> console.log(valor.description))
         });
     };
 

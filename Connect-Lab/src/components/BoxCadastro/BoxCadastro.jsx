@@ -39,7 +39,6 @@ export const BoxCadastro = () => {
         } catch (error) {
             console.log(error);
         }
-        console.log(e);
     };
 
     const checkCEP = (e) => {

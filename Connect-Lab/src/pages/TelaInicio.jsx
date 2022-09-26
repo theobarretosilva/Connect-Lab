@@ -19,7 +19,6 @@ export const TelaInicio = () => {
     
     function handleFilter(event){
         const busca = event.target.value;
-        console.log(busca)
         if(busca === "Todos"){
             const filtroNovo = dispositivosDoUsuario.filter((value) => {
                 return (value.room !== busca ? (value.room) : (undefined));
@@ -56,8 +55,8 @@ export const TelaInicio = () => {
                         localDisp={value.room}
                         POnOff={value.is_on ? ("ON") : ("OFF")}
                         BtnOnOff={value.is_on ? (
-                            <BtnOnStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false).then((res)=> console.log(res))) : (dispOnOff(value._id, true).then((res)=> console.log(res)))}><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>
-                            ) : (<BtnOffStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false).then((res)=> console.log(res))) : (dispOnOff(value._id, true).then((res)=> console.log(res)))}><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)
+                            <BtnOnStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false)) : (dispOnOff(value._id, true))}><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>
+                            ) : (<BtnOffStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false)) : (dispOnOff(value._id, true))}><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)
                         }
                     />
                 ))}
