@@ -93,9 +93,29 @@ export const atualizaUsuario = (nome, dataNasc, emailUsu, linkFoto, senha, telef
     axios.put(`http://localhost:3030/users/${dadosLS}`, dadosAtualizacao, buildAxiosConfig())
         .then((response) => {
             console.log(response)
-            localStorage.setItem("idUsuario", JSON.stringify(response.data._id))
+            localStorage.setItem("dadosUsuAPI", JSON.stringify(response.data))
+            return toast.success('Dados atualizados com sucesso!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+            })
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+            console.log(error)
+            return toast.error('Ops! Algo deu errado!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined
+            })
+        });
 }
 
 export const buscarListaDispositivos = () => {

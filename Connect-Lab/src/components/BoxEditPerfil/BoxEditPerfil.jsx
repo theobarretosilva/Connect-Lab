@@ -21,8 +21,6 @@ export const BoxEditPerfil = () => {
         endereco: yup.string().required(),
         numeroEndereco: yup.number().required(),
         complementoEndereco: yup.string(),
-        senha: yup.string().min(8).required(),
-        confirmacaoSenha: yup.string().min(8).oneOf([yup.ref("senha"), null]).required(),
     });
 
     const {
@@ -36,7 +34,6 @@ export const BoxEditPerfil = () => {
     const onSubmit = (e) => {
         try{
             atualizaUsuario(e.nomeCompleto, e.dataDeNscimento, e.email, e.linkFotoPerfil, e.senha, e.telefone, e.cep, e.estado, e.cidade, e.bairro, e.endereco, e.numeroEndereco, e.complementoEndereco);
-            localStorage.setItem("dadosUsuario", JSON.stringify(e))
         } catch (error) {
             console.log(error);
         };
@@ -58,19 +55,17 @@ export const BoxEditPerfil = () => {
 
     const populaInputs = () => {
         const dadosLS = JSON.parse(localStorage.getItem("dadosUsuario"));
-        setValue("nomeCompleto", dadosLS.nomeCompleto);
-        setValue("dataDeNascimento", dadosLS.dataDeNascimento)
-        setValue("email", dadosLS.email);
-        setValue("linkFotoPerfil", dadosLS.linkFotoPerfil);
-        setValue("telefone", dadosLS.telefone);
-        setValue("cep", dadosLS.cep);
-        setValue("estado", dadosLS.estado);
-        setValue("cidade", dadosLS.cidade);
-        setValue("bairro", dadosLS.bairro);
-        setValue("endereco", dadosLS.endereco);
-        setValue("numeroEndereco", dadosLS.numeroEndereco);
-        setValue("complementoEndereco", dadosLS.complementoEndereco);
-        setValue("senha", dadosLS.senha);
+        setValue("nomeCompleto", dadosLS.user.nomeCompleto);
+        setValue("email", dadosLS.user.email);
+        setValue("linkFotoPerfil", dadosLS.user.linkFotoPerfil);
+        setValue("telefone", dadosLS.user.telefone);
+        setValue("cep", dadosLS.user.cep);
+        setValue("estado", dadosLS.user.estado);
+        setValue("cidade", dadosLS.user.cidade);
+        setValue("bairro", dadosLS.user.bairro);
+        setValue("endereco", dadosLS.user.endereco);
+        setValue("numeroEndereco", dadosLS.user.numeroEndereco);
+        setValue("complementoEndereco", dadosLS.user.complementoEndereco);
     };
 
     useEffect(()=> {
@@ -103,6 +98,7 @@ export const BoxEditPerfil = () => {
                                 type="text"
                                 {...register("dataDeNascimento")}
                                 placeholder="Ex: dd/mm/aaaa"
+                                disabled
                             />
                         </DivInputStyled>
                     </DivBaseStyled>
@@ -205,26 +201,6 @@ export const BoxEditPerfil = () => {
                             {errors?.complementoEndereco?.type && <InputError type={errors.complementoEndereco.type} field="complementoEndereco" />}
                         </DivInputStyled>
                     </DivBaseStyled>
-                    <DivBaseStyled>
-                        <DivInputStyled>
-                                <PESStyled>Senha *</PESStyled>
-                                <InputCadastroStyled
-                                    type="password"
-                                    {...register("senha")}
-                                    placeholder="Sua senha"
-                                />
-                                {errors?.senha?.type && <InputError type={errors.senha.type} field="senha" />}
-                            </DivInputStyled>
-                            <DivInputStyled>
-                                <PESStyled>Confirmação de senha *</PESStyled>
-                                <InputCadastroStyled
-                                    type="password"
-                                    {...register("confirmacaoSenha")}
-                                    placeholder="Confirme a sua senha"
-                                />
-                                {errors?.confirmacaoSenha?.type && <InputError type={errors.confirmacaoSenha.type} field="confirmacaoSenha" />}
-                            </DivInputStyled>
-                        </DivBaseStyled>
                     <BtnCadastrese>Salvar</BtnCadastrese>
                 </form>
                 <Link to={"/perfil"}><PLoginStyled>Cancelar</PLoginStyled></Link>
