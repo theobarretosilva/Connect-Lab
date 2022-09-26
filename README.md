@@ -65,7 +65,12 @@ Tabela de conteúdos
       * [Pre Requisitos](#pre-requisitos)
       * [Rodando o Back End](#rodando-o-backend)
    * [Tabela de conteúdos](#testes)
+   * [Deploy do projeto](#Deploy-do-projeto)
 <!--te-->
+
+## Deploy do projeto
+
+Este site está hospedado para você acessar em : https://connect-lab-two.vercel.app/
 
 ### Autor
 ---
