@@ -3,24 +3,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { buildAxiosConfig } from "../../utils/config.jsx";
 
-// function TimeOut(){
-//     const [finishedTimeout, setFinishedTimeout] = useState(false);
-    
-//     useEffect(()=> {
-//         const teste = setTimeout(()=> {
-//             setFinishedTimeout(true);
-//         }, 5050);
-
-//         return ()=> clearTimeout(teste);
-//     }, []);
-
-//     return(
-//         finishedTimeout && <Navigate to="/" replace={true} />
-//     )
-
-// }
-// TimeOut();
-
 export const post = (nome, dataNasc, emailUsu, linkFoto, senha, telefone, cep, estado, cidade, bairro, endereco, numeroEndereco, complemento) => {
     const dadosCadastro = {
         email: emailUsu,
@@ -172,3 +154,12 @@ export const deletDispUsu = (idDisp) => {
 export const buscarUsuario = () => {
     return axios.get("http://localhost:3030/usuario", buildAxiosConfig());
 };
+
+export const dispOnOff = (idDisp, onOff) => {
+    const isOn = {
+        "is_on": onOff,
+    };
+
+    return axios.put(`http://localhost:3030/userDevices/${idDisp}`, isOn, buildAxiosConfig())
+        .then((response)=> console.log(response))
+}

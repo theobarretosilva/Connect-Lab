@@ -1,7 +1,7 @@
 import { BtnRemoveDispStyled, DivDadosInfoStyled, DivInfoStyled, DivOnOffStyled, H3InfoStyled, ImgDetalhesStyled, LinhaStyled, PInfoStyled, TipoDispStyled, SectionDetalheStyled, PStyled } from "./BoxDetalhesDisp.styles"
 import { H1Styled } from "../BoxPerfil/BoxPerfil.styles";
 import { BtnOffStyled, BtnOnStyled, ImgOnOffStyled } from "../CardDispositivo/CardDispositivo.styles";
-import { deletDispUsu } from "../../service/api/axios";
+import { deletDispUsu, dispOnOff } from "../../service/api/axios";
 import { Link } from "react-router-dom";
 
 export const BoxDetalhesDisp = () => {
@@ -24,7 +24,9 @@ export const BoxDetalhesDisp = () => {
                     <ImgDetalhesStyled src={value.device.photoUrl} alt={value.device.name}/>
                     <DivOnOffStyled>
                         <PStyled>Dispositivo {value.is_on ? ("ligado") : ("desligado")}</PStyled>
-                        {value.is_on ? (<BtnOnStyled><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>) : (<BtnOffStyled><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)}
+                        {value.is_on ? (
+                            <BtnOnStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false).then((res)=> console.log(res))) : (dispOnOff(value._id, true).then((res)=> console.log(res)))}><ImgOnOffStyled src="../../../src/assets/imgs/On.png"/></BtnOnStyled>
+                            ) : (<BtnOffStyled value={value._id} onClick={()=> value.is_on ? (dispOnOff(value._id, false).then((res)=> console.log(res))) : (dispOnOff(value._id, true).then((res)=> console.log(res)))}><ImgOnOffStyled src="../../../src/assets/imgs/Off.png"/></BtnOffStyled>)}
                     </DivOnOffStyled>
                     <DivInfoStyled>
                         <H3InfoStyled>Informações do dispositivo</H3InfoStyled>

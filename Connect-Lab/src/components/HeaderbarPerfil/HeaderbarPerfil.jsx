@@ -10,7 +10,7 @@ export const HeaderbarPerfil = () => {
                 <PLogoStyled>Connect Lab</PLogoStyled>
             </DivLogoStyled>
             <DivNavStyled>
-                <Link to={"/"}><LinkDispPerfStyled>Início</LinkDispPerfStyled></Link>
+                <Link to={"/inicio"}><LinkDispPerfStyled>Início</LinkDispPerfStyled></Link>
                 <Link to={"/dispositivos"}><LinkDispPerfStyled>Dispositivos</LinkDispPerfStyled></Link>
                 <LinkInicioStyled>Perfil</LinkInicioStyled>
             </DivNavStyled>
