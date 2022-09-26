@@ -3,9 +3,6 @@ import { DivLogoStyled, HeaderbarStyled, ImgStyled, PLogoStyled } from "../Heade
 import { DivNavStyled, LinkDispPerfStyled, LinkInicioStyled} from "./HeaderbarInicio.styles"
 
 export const HeaderbarInicio = () => {
-    // const urlAtual = window.location.href;
-    // const location = useLocation();
-
     return(
         <HeaderbarStyled>
             <DivLogoStyled>
@@ -18,5 +15,5 @@ export const HeaderbarInicio = () => {
                 <Link to={"/perfil"}><LinkDispPerfStyled>Perfil</LinkDispPerfStyled></Link>
             </DivNavStyled>
         </HeaderbarStyled>
-    )
-}
+    );
+};

@@ -7,11 +7,6 @@ import { InputError } from '../InputError/InputError.jsx';
 import { fazerLogin } from '../../service/api/axios.jsx';
 
 export const BoxLogin = () => {
-    // const [input, setInput] = useState('')
-    // const [hidePass, setHidePass] = useState(true);
-
-    // eslint-disable-next-line no-unused-vars
-    // const { authenticated, login } = useContext(AutenticacaoContext);
 
     const validationSchema = yup.object({
         email: yup.string().email().required(),
@@ -19,9 +14,6 @@ export const BoxLogin = () => {
     });
 
     const {register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(validationSchema)});
-
-    // const redireciona = useNavigate();
-    // const timeOutRed = setTimeout(redireciona('/'), 5100)
 
     const onSubmit = (dados) => {
         fazerLogin(dados.email, dados.senha)
@@ -31,7 +23,6 @@ export const BoxLogin = () => {
         <main>
             <BoxLoginStyled>
                 <AcessarStyled>Acessar</AcessarStyled>
-                {/* {String(authenticated)} */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <DivStyled>
                         <PESStyled>E-mail</PESStyled>
@@ -49,14 +40,8 @@ export const BoxLogin = () => {
                             placeholder="Sua senha" 
                             type="password" 
                             {...register("senha")} 
-                            // value={input}
-                            // onChange={(texto)=> setInput(texto)}
                         />
                     </DivStyled>
-                    {/* <DivMostraSenhaStyled>
-                        <CheckSenhaStyled onClick={()=> setHidePass(!hidePass)} type="checkbox"/>
-                        <LabelCheckStyled>Mostrar senha</LabelCheckStyled>
-                    </DivMostraSenhaStyled> */}
                     <BtnLogin>Fazer login</BtnLogin>
                 </form>
                 <Link to={"/cadastroUsu"}><PCadastreseStyled>Cadastre-se</PCadastreseStyled></Link>

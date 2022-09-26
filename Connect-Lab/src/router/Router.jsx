@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { TelaLogin, TelaDispositivos, TelaPerfil, TelaCadastro, TelaNotFound, TelaDetalhesDisp, TelaInicio } from '../pages';
+import { TelaLogin, TelaDispositivos, TelaPerfil, TelaCadastro, TelaDetalhesDisp, TelaInicio } from '../pages';
 import { TelaEditDadosUsu } from "../pages/TelaEditDadosUsu";
 
 export const Router = () => {
     return(
         <Routes>
-            <Route element={<TelaNotFound />} />
             <Route exact path="/" element={<TelaLogin />} />
             <Route exact path="/cadastroUsu" element={<TelaCadastro />} />
             <Route exact path="/dispositivos" element={<TelaDispositivos />} />

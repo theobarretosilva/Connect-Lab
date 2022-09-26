@@ -30,7 +30,6 @@ export const ModalAddDisp = ({ nomeDispositivo, closeModal }) => {
     }
 
     const locaisDisp = JSON.parse(localStorage.getItem("locaisAddDisp"));
-    // const numAleatorio = Math.floor(Math.random() * 20000 + 5000);
 
     return(
         <FundoTotalModalStyled>
