@@ -67,6 +67,10 @@ Tabela de conteúdos
    * [Tabela de conteúdos](#testes)
 <!--te-->
 
+### Deploy do projeto
+
+Este site está hospedado para você acessar em : https://connect-lab-two.vercel.app/
+
 ### Autor
 ---
 
