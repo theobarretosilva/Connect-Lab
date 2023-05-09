@@ -6,7 +6,7 @@
 # 💻 Sobre o projeto
 O projeto **Connect Lab** é um site construído no 2° projeto do módulo 1 no curso DEVinHouse.
 
-A aplicação consiste em um site onde o usuário pode gerenciar, adicionar e vizualizar os seus dispositívos inteligentes.
+A aplicação consiste em um site onde o usuário pode gerenciar, adicionar e visualizar os seus dispositivos inteligentes.
 
 O website conta com as seguintes funções:
   - Autenticação dos usuários;
